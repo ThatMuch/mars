@@ -1,0 +1,71 @@
+/**
+ *
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       mars_1.0.0.0
+ *
+ */
+img {
+    border-radius: 3px !important;
+
+    &.shadow {
+        box-shadow: $shadow;
+    }
+}
+
+.block__image--bordered {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 50px;
+
+    .img-box {
+        box-shadow: $shadow;
+        background: $color-light;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(0);
+            transition-duration: $transition_slow;
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: $color-black;
+                z-index: 1;
+                filter: opacity(0.7);
+                transition-duration: $transition_slow;
+
+                &:hover {
+                    display: none;
+                } // Change here for more opacity
+
+            }
+
+            &:hover {
+                filter: saturate(1);
+            }
+        }
+    }
+
+    .bordered {
+        border: 1px solid $color-grey2;
+        border-radius: 3px;
+        position: absolute;
+        z-index: -1;
+        top: 24px;
+        left: -24px;
+        width: 100%;
+        height: 100%;
+
+        @include breakpoint(mobile) {
+            left: -24px;
+        }
+    }
+}

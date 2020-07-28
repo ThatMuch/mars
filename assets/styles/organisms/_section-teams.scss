@@ -1,0 +1,117 @@
+.section-team {
+    @include breakpoint(laptop) {
+        .team-column:nth-child(even) .section-team {
+            &__member {
+                flex-direction: row-reverse;
+
+                &__img {
+                    margin-right: 0;
+                    margin-left: -5px;
+                }
+            }
+        }
+    }
+
+
+    &__member {
+        margin-bottom: 50px;
+
+        @include breakpoint(laptop) {
+            display: flex;
+            align-items: center;
+        }
+
+
+        &__img {
+            height: 250px;
+            width: 80%;
+            display: block;
+            margin: 0 -5px auto;
+            z-index: 0;
+            position: relative;
+
+            img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+                filter: saturate(0);
+                transition-duration: $transition_slow;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $color-black;
+                    z-index: 1;
+                    filter: opacity(0.7);
+                    transition-duration: $transition_slow;
+
+                    &:hover {
+                        display: none;
+                    } // Change here for more opacity
+               
+                }
+
+                &:hover {
+                    filter: saturate(1);
+                }
+            }
+
+            @include breakpoint(laptop) {
+                margin: 0 -5px 0 0;
+                height: 310px;
+                width: 250px;
+                height: 300px;
+            }
+        }
+
+        &__content {
+            padding: 20px 35px;
+            background: $color-light;
+            text-align: center;
+            box-shadow: $shadow;
+            border-radius: 3px;
+            z-index: 1;
+            position: relative;
+
+            @include breakpoint(laptop) {
+                text-align: left;
+                width: calc(100% - 250px);
+                height: 350px;
+                overflow: scroll;
+            }
+
+
+            &__name {
+                @include breakpoint(laptop) {
+                    text-align: left !important;
+                }
+            }
+
+            &__desc {
+                text-align: justify;
+            }
+
+            &__job {
+                font-family: $text-heading;
+                font-size: 1rem;
+                font-weight: 100 !important;
+                margin-bottom: 1rem;
+            }
+        }
+
+        &__rs {
+            li {
+                list-style: none;
+                display: inline-block;
+                font-size: 25px;
+
+                &:not(:last-child) {
+                    // Ajouter une marge à droite sauf sur le dernier lien
+                    @extend .mr-2;
+                }
+            }
+        }
+    }
+}

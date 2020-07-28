@@ -1,0 +1,68 @@
+/**
+ *
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       mars_1.0.0.0
+ *
+ */
+
+button, .btn {
+    padding: 13px 38px !important;
+    border-radius: 3px !important;
+    text-transform: uppercase !important;
+    font-family: "Arial" !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    letter-spacing: 1px !important;
+    color: $color-light !important;
+    line-height: normal !important;
+
+    &:hover, &:active, &:focus {
+        //
+
+    }
+
+    &:disabled {
+        //
+
+    }
+}
+
+.btn.btn-primary {
+    &:hover, &:active, &:focus {
+        //
+
+    }
+}
+
+.btn.btn-secondary {
+    &:hover, &:active, &:focus {
+        //
+
+    }
+}
+
+.btn.btn-outline-dark {
+    color: $color-dark !important;
+
+    &:hover, &:active, &:focus {
+        background: $color-dark;
+        color: white !important;
+    }
+}
+
+.btn.btn-outline-secondary {
+    &:hover, &:active, &:focus {
+        //
+
+    }
+}
+
+.btn.btn-dark {
+    background: $color-dark !important;
+
+    &:hover, &:active, &:focus {
+        //
+
+    }
+}

@@ -1,0 +1,94 @@
+/**
+ *
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       mars_1.0.0.0
+ *
+ */
+/*==================================================================================
+  NAV
+==================================================================================*/
+nav.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    width: 100vw;
+    height: 90px;
+
+    .logo  {
+        width: 12rem;
+        height: 60px !important;
+        background-repeat: no-repeat;
+        background-size: contain !important;
+    }
+
+    .navbar-collapse.show {
+        background-color: $color-primary;
+        width: 100vw;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 90px;
+        padding: 15px;
+
+        a {
+            color: #fff;
+        }
+    }
+
+    .nav-link {
+        font-family: $text-heading;
+        text-transform: uppercase;
+        font-size: 13px;
+        color: $color-black !important;
+
+        &:hover {
+            opacity: .7;
+        }
+
+        @include breakpoint(laptop) {
+            &.active {
+                position: relative;
+
+                &::after {
+                    content: '';
+
+                    width: calc(100% - 25px);
+                    position: absolute;
+                    left: 50%;
+                    bottom: 1px;
+                    transform: translate(-50%, 0);
+
+                    border-width: 0 0 1px;
+                    border-style: solid;
+                    border-color: $color-primary-darker;
+                }
+            }
+        }
+    }
+
+    .header__rs {
+        .footer__rs__item {
+            margin-right: 1.5rem;
+
+            &:last-child {
+                margin-right: 0 !important;
+            }
+
+            i {
+                color: $black !important;
+            }
+
+            &:hover i {
+                color: $color-dark !important;
+            }
+        }
+    }
+
+    @media (max-width: 992px) {
+        .header__rs {
+            display: none;
+        }
+    }
+}

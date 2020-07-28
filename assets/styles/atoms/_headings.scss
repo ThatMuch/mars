@@ -1,0 +1,74 @@
+/**
+ *
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       mars_1.0.0.0
+ *
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: $text-heading;
+    font-weight: 700 !important;
+    color: $color-dark;
+    position: relative;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+h1 {
+    @include heading-size(6);
+
+    text-align: center;
+    color: $color-light;
+
+    span {
+        &.primary {
+            color: $color-primary;
+        }
+
+        &.light {
+            font-weight: 100;
+        }
+    }
+}
+
+h2 {
+    @include heading-size(5);
+    @include breakpoint(mobile) {
+        font-size: 1rem !important;
+    }
+
+
+    padding-left: 20px;
+
+    &::before {
+        content: "";
+        height: 56px;
+        width: 4px;
+        display: inline-block;
+        vertical-align: middle;
+        background: $color-dark;
+        position: absolute;
+        top: 50%;
+        transform: translate(-20px, -50%);
+    }
+
+    &.primary::before {
+        background: $color-primary;
+    }
+}
+
+h3 {
+    @include heading-size(4);
+}
+
+h4 {
+    @include heading-size(3);
+}
+
+h5 {
+    @include heading-size(2);
+}
+
+h6 {
+    @include heading-size(1);
+}

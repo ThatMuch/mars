@@ -1,0 +1,27 @@
+.section-header {
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 500px;
+    }
+
+    .section__title {
+        margin-bottom: 1rem !important;
+    }
+
+    .vidbg-container {
+        filter: saturate(0);
+    }
+
+    .vidbg-overlay {
+        background: $color-black !important;
+        filter: opacity(0.7); // Change here for more opacity
+   
+    }
+}

@@ -1,0 +1,154 @@
+/**
+ *
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       mars_1.0.0.0
+ *
+ */
+
+.footer {
+    width: 100vw;
+    margin-top: auto;
+    color: $color-grey;
+    background: $color-dark;
+
+    &__rs {
+        text-align: center;
+
+        &__item {
+            display: inline-block;
+            list-style: none;
+            margin-right: 1.5rem;
+
+            &:last-child {
+                margin-right: 0 !important;
+            }
+
+            a {
+                color: $color-grey1;
+                font-size: 1.5rem;
+            }
+
+            &:hover i {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &__inner {
+        padding: 1.5rem 0;
+        font-size: 0.8rem;
+    }
+
+    &__credits {
+        background-color: $black;
+        color: $color-grey2;
+        text-align: center;
+        position: relative;
+
+        &__thatmuch {
+            position: absolute;
+            top: 50%;
+            right: 35px;
+            transform: translate(0, -50%);
+        }
+
+        a {
+            color: $color-grey2;
+        }
+    }
+
+    &__logo img {
+        width: 70px;
+    }
+
+    &__follow-us {
+        margin-top: 15px !important;
+        font-family: $text-heading;
+        font-size: 15px !important;
+        font-weight: 700 !important;
+    }
+
+    &__infos {
+        margin-top: 20px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        p {
+            margin-bottom: 5px !important;
+            line-height: 20px !important;
+        }
+    }
+
+    /*----------  Widgets  ----------*/
+
+    .widget-title {
+        color: $color-grey1;
+        margin-bottom: 1rem;
+    }
+
+    .nav {
+        padding: 0;
+
+        .nav-link {
+            color: $color-light;
+            padding: 0 0 0.75rem 0;
+        }
+    }
+
+    .widget_nav_menu > div {
+        margin-top: 20px !important;
+    }
+
+    .menu {
+        margin-left: 40px !important;
+    }
+
+    .widget.widget_nav_menu {
+        li a {
+            text-decoration: underline !important;
+
+            &:hover {
+                color: $color-primary !important;
+            }
+        }
+    }
+
+    @media (max-width: 992px) {
+        .menu {
+            margin-left: 20px !important;
+        }
+
+        .footer__rs__item {
+            margin-right: .75rem;
+        }
+
+        .widget_nav_menu {
+            text-align: center !important;
+        }
+
+        .footer__credits .footer__thatmuch {
+            position: inherit;
+            display: block;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .menu {
+            margin-left: 0px !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .footer__credits {
+            padding-bottom: 20px;
+
+            &__thatmuch {
+                position: inherit;
+            }
+        }
+    }
+}
