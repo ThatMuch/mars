@@ -49,7 +49,6 @@ function stanlee_sections() {
       if (get_row_layout() == 'stats') : stanlee_section_stats(); endif;
       if (get_row_layout() == 'faq') : stanlee_section_faq(); endif;
       if (get_row_layout() == 'header') : stanlee_section_header(); endif;
-      if (get_row_layout() == 'event') : stanlee_section_event(); endif;
     endwhile;
   endif;
   return ob_get_flush();
@@ -178,12 +177,6 @@ function stanlee_section_header() {
     include (get_template_directory().'/templates/section-header.php');
   return ob_get_flush();
 }
-/* Event
-/––––––––––––––––––––––––*/
-function stanlee_section_event() {
-  ob_start('sanitize_output');
-    include (get_template_directory().'/templates/section-event.php');
-  return ob_get_flush();
-}
+
 
 ?>

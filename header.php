@@ -32,7 +32,7 @@
 		<div class="container">
 			<a class="navbar-brand" href="<?php echo  site_url(); ?>">
 				<div class="logo" style="background-image: url('<?php if ($image[0]) : echo $image[0];
-																else : echo get_template_directory_uri() ?>/assets/images/logo.png<?php endif; ?>')"></div>
+																else : echo get_template_directory_uri() ?>/assets/images/MarsLogoBlack.webp<?php endif; ?>')"></div>
 			</a>
 			<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e('Toggle Navigation', 'theme-textdomain'); ?>">
 				<span class="navbar-toggler-icon"></span>

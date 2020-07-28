@@ -10,7 +10,7 @@
     width: 100vw;
     margin-top: auto;
     color: $color-grey;
-    background: $color-dark;
+    background: $color-secondary;
 
     &__rs {
         text-align: center;
@@ -41,8 +41,8 @@
     }
 
     &__credits {
-        background-color: $black;
-        color: $color-grey2;
+        background-color: $color-secondary-darker;
+        color: white;
         text-align: center;
         position: relative;
 
@@ -51,10 +51,15 @@
             top: 50%;
             right: 35px;
             transform: translate(0, -50%);
+            width: 120px;
+
+            img {
+                width: 100%;
+            }
         }
 
         a {
-            color: $color-grey2;
+            color: white;
         }
     }
 

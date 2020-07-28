@@ -13,7 +13,7 @@
 			<?php if (have_rows('rs', 'options')) : ?>
 				<div class="col-md-3 col-sm-12 text-center">
 					<div class="footer__logo">
-						<img src="<?php echo  get_template_directory_uri() ?>/assets/images/logo-footer.png" alt="logo footer">
+						<img src="<?php echo  get_template_directory_uri() ?>/assets/images/MarsLogoWhite.webp" alt="logo footer">
 					</div>
 					<p class="footer__follow-us">Suivez nous !</p>
 					<?php while (have_rows('rs', 'options')) : the_row(); ?>
