@@ -24,8 +24,6 @@
                   <?php if (have_rows('service')) : ?>
                         <?php while (have_rows('service')) : the_row(); ?>
                               <div class="col-lg-4 col-md-12 section-services__item">
-                                    <?php if (get_sub_field('link')) : ?>
-                                          <a class="no-style" href="<?php echo  get_sub_field('link'); ?>">
                                                 <!-- Image -->
                                                 <?php if (get_sub_field('image')) : $img = get_sub_field('image'); ?>
                                                       <div class="block__image--bordered">
@@ -49,8 +47,6 @@
                                                       <p class="section-services__item__text"> <?php echo  get_sub_field('text'); ?></p>
                                                 <?php endif; ?>
                                                 <!-- Texte -->
-                                          </a>
-                                    <?php endif; ?>
                               </div>
                         <?php endwhile; ?>
                   <?php endif; ?>

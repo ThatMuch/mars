@@ -42,7 +42,7 @@ $args = array(
     "rewrite" => array( "slug" => "team", "with_front" => true ),
     "query_var" => true,
     "menu_icon" => "dashicons-groups",
-    "supports" => array( "title", "thumbnail" ),
+    "supports" => array( "title", "editor", "thumbnail" ),
 );
 
 register_post_type( "team", $args );
@@ -86,7 +86,7 @@ $args = array(
     "rewrite" => array( "slug" => "testimonials", "with_front" => true ),
     "query_var" => true,
     "menu_icon" => "dashicons-format-quote",
-    "supports" => array( "title", "thumbnail" ),
+    "supports" => array( "title", "editor", "thumbnail" ),
 );
 
 register_post_type( "testimonials", $args );

@@ -40,7 +40,7 @@
   <!-- Button -->
   <?php if ( get_sub_field('button') ) : $link = get_sub_field('button');?>
                 <div class="section-text-image__btn">
-                    <a class="btn <?php echo  $fond == "Couleur" ? "btn-dark" : "btn-primary" ?>" href="<?php echo  $link['url']; ?>" target="<?php echo $link['target'];?>">
+                    <a class="btn <?php echo  $fond == "Couleur" ? "btn-outline-light" : "btn-primary" ?>" href="<?php echo  $link['url']; ?>" target="<?php echo $link['target'];?>">
                         <?php echo  $link['title']; ?>
                     </a>
                 </div>
@@ -49,7 +49,7 @@
   <!-- Button -->
   <?php if ( get_sub_field('button_secondary') ) : $link = get_sub_field('button_secondary'); ?>
                 <div class="section-text-image__btn">
-                    <a class="btn btn-dark" href="<?php echo  $link['url']; ?>" target="<?php echo $link['target'];?>">
+                    <a class="btn btn-outline-light ml-2" href="<?php echo  $link['url']; ?>" target="<?php echo $link['target'];?>">
                         <?php echo  $link['title']; ?>
                     </a>
                 </div>

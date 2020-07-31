@@ -43,7 +43,7 @@
                         },
                         {
                             "key": "field_5b9bb37d734b2",
-                            "label": "Lead",
+                            "label": "Slogan",
                             "name": "lead",
                             "type": "text",
                             "instructions": "",
@@ -56,11 +56,9 @@
                             },
                             "default_value": "",
                             "placeholder": "",
-                            "maxlength": "",
-                            "rows": "",
-                            "new_lines": "",
                             "prepend": "",
-                            "append": ""
+                            "append": "",
+                            "maxlength": ""
                         },
                         {
                             "key": "field_5b9bb3d9734c4",
@@ -220,7 +218,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array",
+                            "return_format": "url",
                             "preview_size": "thumbnail",
                             "library": "all",
                             "min_width": "",
@@ -460,7 +458,7 @@
                             "choices": {
                                 "Blanc": "Blanc",
                                 "Gris": "Gris",
-                                "Couleur": "Jaune"
+                                "Couleur": "Primary"
                             },
                             "allow_null": 0,
                             "other_choice": 0,
@@ -1139,126 +1137,6 @@
                     ],
                     "min": "",
                     "max": ""
-                },
-                "layout_5e944519122ed": {
-                    "key": "layout_5e944519122ed",
-                    "name": "event",
-                    "label": "Évènements",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5e944519122ee",
-                            "label": "Titre",
-                            "name": "title",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "section__title",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5e944549122f2",
-                            "label": "Boutton",
-                            "name": "button",
-                            "type": "link",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array"
-                        },
-                        {
-                            "key": "field_5e9481865d6a1",
-                            "label": "App ID",
-                            "name": "app_id",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5e9481a25d6a2",
-                            "label": "Access Token",
-                            "name": "access_token",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5e949562c39e2",
-                            "label": "App Secret",
-                            "name": "app_secret",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5efb4699a58e7",
-                            "label": "Page ID",
-                            "name": "page_id",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
                 }
             },
             "button_label": "Ajouter une section",
@@ -1292,5 +1170,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1593525986
+    "modified": 1595943536
 }

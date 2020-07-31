@@ -1,27 +1,40 @@
 .section-header {
     background-color: #fff;
-    text-align: center;
+
+    //text-align: center;
     position: relative;
+    height: $size-header;
+    display: flex;
+    align-items: center;
+
+    .section-background-image {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: cover;
+    }
 
     .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        height: 500px;
+        //display: flex;
+        //align-items: center;
+        // justify-content: center;
+        // flex-direction: column;
+   
     }
 
     .section__title {
         margin-bottom: 1rem !important;
     }
 
-    .vidbg-container {
+  /*   .vidbg-container {
         filter: saturate(0);
     }
 
     .vidbg-overlay {
         background: $color-black !important;
         filter: opacity(0.7); // Change here for more opacity
-   
-    }
+
+    } */
 }

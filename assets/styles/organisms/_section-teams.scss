@@ -34,7 +34,7 @@
                 object-fit: cover;
                 height: 100%;
                 width: 100%;
-                filter: saturate(0);
+                //filter: saturate(0);
                 transition-duration: $transition_slow;
 
                 &:before {
@@ -50,7 +50,7 @@
                     &:hover {
                         display: none;
                     } // Change here for more opacity
-               
+
                 }
 
                 &:hover {

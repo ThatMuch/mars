@@ -14,31 +14,32 @@ button, .btn {
     font-weight: 700 !important;
     font-size: 13px !important;
     letter-spacing: 1px !important;
-    color: $color-light !important;
     line-height: normal !important;
 
     &:hover, &:active, &:focus {
         //
-
+   
     }
 
     &:disabled {
         //
-
+   
     }
 }
 
 .btn.btn-primary {
+    color: $color-light;
+
     &:hover, &:active, &:focus {
         //
-
+   
     }
 }
 
 .btn.btn-secondary {
     &:hover, &:active, &:focus {
         //
-
+   
     }
 }
 
@@ -54,7 +55,7 @@ button, .btn {
 .btn.btn-outline-secondary {
     &:hover, &:active, &:focus {
         //
-
+   
     }
 }
 
@@ -63,6 +64,6 @@ button, .btn {
 
     &:hover, &:active, &:focus {
         //
-
+   
     }
 }

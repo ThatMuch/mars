@@ -44,11 +44,12 @@ html body {
     align-items: center;
     min-height: 100vh;
     background-color: $html__bgcolor !important;
+    color: $text-c;
 }
 
 main {
     position: relative;
-    margin-top: $header_height;
+    margin-top: $size-navbar;
 
     article,
     .element {
@@ -58,7 +59,7 @@ main {
 
 aside {
     position: relative;
-    margin-top: $header_height;
+    margin-top: $size-navbar;
 
     .widget {
         padding: 1rem 0;

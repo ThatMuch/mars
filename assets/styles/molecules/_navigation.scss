@@ -14,11 +14,11 @@ nav.navbar {
     left: 0;
     z-index: 200;
     width: 100vw;
-    height: 90px;
+    height: $size-navbar;
 
     .logo  {
         width: 12rem;
-        height: 60px !important;
+        height: calc(#{$size-navbar} - 20px);
         background-repeat: no-repeat;
         background-size: contain !important;
     }
@@ -53,13 +53,11 @@ nav.navbar {
 
                 &::after {
                     content: '';
-
                     width: calc(100% - 25px);
                     position: absolute;
                     left: 50%;
                     bottom: 1px;
                     transform: translate(-50%, 0);
-
                     border-width: 0 0 1px;
                     border-style: solid;
                     border-color: $color-primary-darker;

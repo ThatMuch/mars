@@ -51,7 +51,7 @@ $color-input-value: #495057;
 $text-fz: 1em;
 $text-scale-ratio: 1.2;
 $text-ff: "Montserrat", sans-serif;
-$text-c: $color-dark;
+$text-c: $color-black;
 $text-fw: 400;
 $text-lh: 2;
 $text-heading: "Montserrat", sans-serif;
@@ -71,6 +71,15 @@ $text-xxxl: calc(1em * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-sca
 
 
 /*=====  End of FONTS                  ======*/
+
+/*=============================================
+=            Sizes                           =
+=============================================*/
+
+$size-header: 500px;
+$size-navbar: 70px;
+
+/*=====  End of Sizes                 ======*/
 
 /*=============================================
 =            Space                            =
