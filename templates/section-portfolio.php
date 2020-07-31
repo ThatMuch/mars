@@ -29,13 +29,14 @@
               <?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
                   <div class="col-sm-3">
                       <!-- Image -->
-                      <a href="<?php the_permalink()?>">
-                        <img src="<?php the_post_thumbnail_url( 'medium' )?>" alt="">
+                      <a href="<?php the_permalink()?>" class="section-portfolio__img">
+                        <img src="<?php the_post_thumbnail_url( 'medium' )?>" alt="<?php the_title()?>">
+                        <h5 class="section-portfolio__title"><?php the_title()?></h5>
                     </a>
                       <!-- Image -->
                       <!-- Title -->
-                          <h5><a href="<?php the_permalink()?>"><?php the_title()?></a></h5>
-                      <!-- Title -->
+<!--                           <h5 class="section-portfolio__title"><a href="<?php the_permalink()?>"><?php the_title()?></a></h5>
+ -->                      <!-- Title -->
                   </div>
               <?php $i++; endwhile;?>
             </div>
