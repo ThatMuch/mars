@@ -85,6 +85,7 @@
 
             &::before {
                 transform: translate(-40px, -50%);
+                background: $color-primary;
             }
 
             @include breakpoint(mobile) {

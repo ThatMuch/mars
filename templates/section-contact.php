@@ -23,26 +23,7 @@
 	<!-- Section background: image -->
 	<div class="container">
 		<div class="row">
-			<?php
-
-			$images = get_sub_field('gallerie');
-			$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
-
-			if ($images) : ?>
-				<div class="section-contact__gallery col-sm-12 col-lg-6">
-					<div class="grid">
-						<?php foreach ($images as $image) : ?>
-
-							<a href="<?php echo  $image['url']; ?>" target="_blank">
-								<img src="<?php echo  $image['sizes']['medium']; ?>" alt="<?php echo  $image['alt']; ?>" />
-							</a>
-
-						<?php endforeach; ?>
-					</div>
-				</div>
-			<?php endif; ?>
-
-			<div class="section-contact__form col-sm-12 col-lg-6">
+			<div class="section-contact__form col-sm-12">
 				<!-- Title -->
 				<?php if (get_sub_field('title')) : ?>
 					<h2 class="section__title primary"><?php echo  get_sub_field('title'); ?></h2>
