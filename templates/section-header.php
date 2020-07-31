@@ -23,23 +23,23 @@
     <div class="container">
            <!-- Title -->
         <?php if(get_sub_field('title') ) : ?>
-            <h1 class="section__title"><?php echo  get_sub_field('title'); ?></h1>
+            <h1 class="section__title animate__animated animate__slideInDown"><?php echo  get_sub_field('title'); ?></h1>
         <?php endif; ?>
         <!-- Title -->
 
         <!-- Lead -->
         <?php if(get_sub_field('lead') ) : ?>
-            <p> <?php echo  get_sub_field('lead'); ?></p>
+            <p class="section__lead animate__animated animate__slideInDown"> <?php echo  get_sub_field('lead'); ?></p>
         <?php endif; ?>
         <!-- Lead -->
         <!-- Button -->
         <?php if (have_rows('button')) : ?>
             <?php while ( have_rows('button') ) : the_row(); ?>
                 <?php if (get_sub_field('link') == 'Externe' && get_sub_field('label') && get_sub_field('url') ) : ?>
-                    <a href="<?php the_sub_field('url'); ?>" class="btn btn-outline-light"><?php the_sub_field('label'); ?></a>
+                    <a href="<?php the_sub_field('url'); ?>" class="btn btn-outline-light animate__animated animate__fadeIn"><?php the_sub_field('label'); ?></a>
                 <?php endif; ?>
                 <?php if (get_sub_field('link') == 'Interne' && get_sub_field('label') && get_sub_field('int_url') ) : ?>
-                    <a href="<?php the_sub_field('int_url'); ?>" class="btn btn-outline-light">
+                    <a href="<?php the_sub_field('int_url'); ?>" class="btn btn-outline-light animate__animated animate__fadeIn">
                         <?php the_sub_field('label'); ?>
                     </a>
                 <?php endif; ?>

@@ -26,6 +26,12 @@
                 left: inherit;
                 right: -24px;
             }
+
+            &:hover {
+                .bordered {
+                    right: -35px;
+                }
+            }
         }
     }
 

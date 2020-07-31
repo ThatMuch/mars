@@ -18,39 +18,26 @@ img {
     display: flex;
     justify-content: center;
     margin: 0 auto 50px;
+    border-radius: 3px;
 
     .img-box {
         box-shadow: $shadow;
         background: $color-light;
         width: 100%;
         height: 100%;
+        overflow: hidden;
+        position: relative;
+        overflow: hidden;
+        border-radius: 3px;
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-
-            //filter: saturate(0);
             transition-duration: $transition_slow;
 
-            &:before {
-                content: "";
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background-color: $color-black;
-                z-index: 1;
-                filter: opacity(0.7);
-                transition-duration: $transition_slow;
-
-                &:hover {
-                    display: none;
-                } // Change here for more opacity
-           
-            }
-
             &:hover {
-                filter: saturate(1);
+                transform: scale(1.2);
             }
         }
     }
@@ -64,9 +51,13 @@ img {
         left: -24px;
         width: 100%;
         height: 100%;
+        transition-duration: $transition_slow;
+    }
 
-        @include breakpoint(mobile) {
-            left: -24px;
+    &:hover {
+        .bordered {
+            top: 35px;
+            left: -35px;
         }
     }
 }

@@ -13,6 +13,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+	<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
 	<?php mars_gtm('head') ?>
 	<!--=== OPEN-GRAPH TAGS ===-->
 	<?php mars_ogtags() ?>
