@@ -38,7 +38,7 @@
                                 <div class="carousel-item section-testimonials__carousel_item <?php if($y == 0) {echo 'active';} ?>">
                                     <!-- Image -->
                                     <?php if (get_the_post_thumbnail()) : ?>
-                                          <img src="<?php the_post_thumbnail_url('thumbnail')?>" alt="" class="section-testimonials__carousel_item-image">
+                                          <img data-src="<?php the_post_thumbnail_url('thumbnail')?>" alt="" class="section-testimonials__carousel_item-image">
                                     <?php else : ?>
                                           <div class="section-testimonials__carousel_item-image"></div>
                                     <?php endif;?>

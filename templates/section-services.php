@@ -28,7 +28,7 @@
                                                 <?php if (get_sub_field('image')) : $img = get_sub_field('image'); ?>
                                                       <div class="block__image--bordered">
                                                             <div class="img-box">
-                                                                  <img class="section-service__image shadow" src="<?php echo  $img['sizes']['medium'] ?>" alt="<?php echo  $img['alt']; ?>">
+                                                                  <img class="section-service__image shadow" data-src="<?php echo  $img['sizes']['medium'] ?>" alt="<?php echo  $img['alt']; ?>">
                                                             </div>
                                                             <div class="bordered left-bottom"></div>
                                                       </div>

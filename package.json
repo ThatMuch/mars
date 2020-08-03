@@ -4,6 +4,7 @@
   "description": "Description",
   "author": "ThatMuch",
   "devDependencies": {
+    "animate.css": "^4.1.0",
     "browser-sync": "^2.26.12",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
@@ -18,6 +19,7 @@
     "gulp-rev": "^9.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
+    "gulp-uglify-es": "^2.0.0",
     "gulp-watch": "^5.0.1",
     "gulp-wp-pot": "^2.4.1",
     "gulp-zip": "^5.0.1",

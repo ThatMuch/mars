@@ -13,7 +13,7 @@
 			<?php if (have_rows('rs', 'options')) : ?>
 				<div class="col-md-3 col-sm-12 text-center">
 					<div class="footer__logo">
-						<img src="<?php echo  get_template_directory_uri() ?>/assets/images/MarsLogoWhite.webp" alt="logo footer">
+						<img data-src="<?php echo  get_template_directory_uri() ?>/assets/images/MarsLogoWhite.webp" alt="logo footer">
 					</div>
 					<p class="footer__follow-us">Suivez nous !</p>
 					<?php while (have_rows('rs', 'options')) : the_row(); ?>
@@ -76,7 +76,7 @@
 				© Copyright 2019, Tous droits réservés Génération Ubuntu France
 			</div>
 			<a class="footer__credits__thatmuch" href="https://thatmuch.fr" target="_blank" rel="noopener noreferrer">
-				<img src="<?php echo  get_template_directory_uri() ?>/assets/images/thatmuch-logo.webp" alt="logo that much">
+				<img data-src="<?php echo  get_template_directory_uri() ?>/assets/images/thatmuch-logo.webp" alt="logo that much">
 			</a>
 		</div>
 	</div>

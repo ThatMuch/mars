@@ -30,7 +30,7 @@
                   <div class="col-sm-3">
                       <!-- Image -->
                       <a href="<?php the_permalink()?>" class="section-portfolio__img">
-                        <img src="<?php the_post_thumbnail_url( 'medium' )?>" alt="<?php the_title()?>">
+                        <img data-src="<?php the_post_thumbnail_url( 'medium' )?>" alt="<?php the_title()?>">
                         <h5 class="section-portfolio__title"><?php the_title()?></h5>
                     </a>
                       <!-- Image -->

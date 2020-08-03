@@ -71,7 +71,7 @@ var autoprefixer = require('gulp-autoprefixer');
 // cache busting
 var rev = require('gulp-rev');
 // js
-var uglify = require('gulp-uglify');
+var uglify = require('gulp-uglify-es').default;
 // traduction
 var wpPot = require('gulp-wp-pot');
 // error handling with notify & plumber
@@ -160,7 +160,7 @@ gulp.task('javascript', gulp.series('clean:javascript', function() {
     ], { base: './' }))
     .pipe(plumber({errorHandler: notify.onError("<%= error.message %>")}))
     .pipe(concat('script.min.js'))
-    .pipe(uglify().on('error', console.error))
+    .pipe(uglify())
     .pipe(rename('./script.min.js'))
     .pipe(gulp.dest('./'))
     .pipe(browserSync.stream());

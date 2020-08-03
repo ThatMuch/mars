@@ -33,7 +33,7 @@
       <div class="section-logos__grid">
         <?php foreach ($images as $image) : ?>
           <div class="logo">
-            <img src="<?php echo  $image['sizes'][$size]; ?>" alt="<?php echo  $image['alt']; ?>" />
+            <img data-src="<?php echo  $image['sizes'][$size]; ?>" alt="<?php echo  $image['alt']; ?>" />
           </div>
         <?php endforeach; ?>
       </div>

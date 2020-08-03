@@ -30,7 +30,7 @@
                       <div class="carousel-inner">
                           <?php foreach( $images as $image ): ?>
                               <div class="carousel-item <?php if($y == 0) {echo 'active';} ?>">
-                                  <img src="<?php echo  $image['sizes']['large']; ?>" alt="<?php echo  $image['alt']; ?>"/>
+                                  <img data-src="<?php echo  $image['sizes']['large']; ?>" alt="<?php echo  $image['alt']; ?>"/>
                               </div>
                           <?php  $y++; endforeach;?>
                       </div>

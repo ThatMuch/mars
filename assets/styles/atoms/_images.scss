@@ -5,8 +5,23 @@
  * @since       mars_1.0.0.0
  *
  */
+
+img[data-src] {
+    opacity: 0;
+    transition-duration: $transition_slow;
+
+    //transition: opacity $transition_slow ease-in-out;
+    will-change: opacity;
+}
+
+/* appear animation */
+img[data-src][src] {
+    opacity: 1;
+}
+
 img {
     border-radius: 3px !important;
+    transition-duration: $transition_slow;
 
     &.shadow {
         box-shadow: $shadow;

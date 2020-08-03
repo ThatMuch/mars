@@ -44,7 +44,7 @@
                               <div class="section-team__member">
                                 <!-- Image -->
                                 <?php if (get_the_post_thumbnail()) : ?>
-                                    <img class="section-team__member__img" src="<?php the_post_thumbnail_url('thumbnail')?>" alt="<?php the_title()?>">
+                                    <img class="section-team__member__img" data-src="<?php the_post_thumbnail_url('thumbnail')?>" alt="<?php the_title()?>">
                                 <? else : ?>
                                     <div class="section-team__member__img"></div>
                                 <? endif;?>

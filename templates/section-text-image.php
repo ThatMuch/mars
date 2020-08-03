@@ -24,7 +24,7 @@
                 <div class="block__image--bordered">
                     <div class="img-box">
                     <?php if (get_sub_field('image')) : $img = get_sub_field('image'); ?>
-                        <img src="<?php echo  $img['url']?>" class="img-fluid" />
+                        <img data-src="<?php echo  $img['url']?>" class="img-fluid" />
                     <?php endif; ?>
                     </div>
                     <div class="bordered left-bottom"></div>

@@ -27,7 +27,7 @@ if( $images ): ?>
       <?php foreach( $images as $image ): ?>
 
           <a href="<?php echo  $image['url']; ?>" target="_blank">
-                   <img src="<?php echo  $image['sizes']['medium']; ?>" alt="<?php echo  $image['alt']; ?>" />
+                   <img data-src="<?php echo  $image['sizes']['medium']; ?>" alt="<?php echo  $image['alt']; ?>" />
               </a>
 
       <?php endforeach; ?>
