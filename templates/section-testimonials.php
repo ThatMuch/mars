@@ -30,42 +30,44 @@
                     <div id="carouselTestimonials" class="section-testimonials__carousel carousel slide" data-ride="carousel">
                         <!-- Title -->
                         <?php if(get_sub_field('title') ) : ?>
-                              <h2 class="section__title text-center"><?php echo  get_sub_field('title'); ?></h2>
+                              <h2 class="section__title mb-5 primary"><?php echo  get_sub_field('title'); ?></h2>
                         <?php endif; ?>
                         <!-- Title -->
                           <div class="carousel-inner">
                                 <?php  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
                                 <div class="carousel-item section-testimonials__carousel_item <?php if($y == 0) {echo 'active';} ?>">
-                                    <!-- Image -->
-                                    <?php if (get_the_post_thumbnail()) : ?>
-                                          <img data-src="<?php the_post_thumbnail_url('thumbnail')?>" alt="" class="section-testimonials__carousel_item-image">
-                                    <?php else : ?>
-                                          <div class="section-testimonials__carousel_item-image"></div>
-                                    <?php endif;?>
-                                    <!-- Image -->
-                                      <!-- Job -->
-                                      <?php if (get_field('quote') ) : ?>
-                                            <p> <?php echo  get_field('quote'); ?></p>
-                                      <?php endif; ?>
-                                      <!-- Job -->
-                                      <!-- Auteur -->
-                                            <h5><?php the_title()?></h5>
-                                      <!-- Auteur -->
+                                <div class="row d-flex align-items-center">
+                                      <div class="col-sm-4">
+                                            <!-- Image -->
+                                                <?php if (get_the_post_thumbnail()) : ?>
+                                                      <img data-src="<?php the_post_thumbnail_url('thumbnail')?>" alt="<?php echo  get_sub_field('title'); ?>" class="section-testimonials__carousel_item-image">
+                                                <?php else : ?>
+                                                      <div class="section-testimonials__carousel_item-image"></div>
+                                                <?php endif;?>
+                                                <!-- Image -->
+                                      </div>
+                                      <div class="col-sm-8">
+                                            <!-- Job -->
+                                            <?php if (get_field('quote') ) : ?>
+                                                  <blockquote cite="<?php echo  get_sub_field('title'); ?>" class="animate__animated animate__fadeIn"> <?php echo  get_field('quote'); ?></blockquote>
+                                            <?php endif; ?>
+                                            <!-- Job -->
+                                            <!-- Auteur -->
+                                                  <h5 class="animate__animated animate__fadeIn section-testimonials__carousel_item-author"><?php the_title()?></h5>
+                                            <!-- Auteur -->
+                                      </div>
+                                      </div>
                                 </div>
                                 <?php $y++ ; endwhile;?>
                               </div>
+                              <?php if($y > 1) : ?>
                                       <ol class="carousel-indicators">
                                 <?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
                                       <li data-target="#carouselTestimonials" data-slide-to="<?php echo  $i?>" class="<?php if($i == 0) {echo 'active';
                                       } ?>"></li>
                                 <?php $i++; endwhile;?>
-                                </ol>
-                          <a class="carousel-control-prev" data-target="#carouselTestimonials" role="button" data-slide="prev">
-                                <i class="fas fa-chevron-left fa-2x" aria-hidden="true"></i>
-                          </a>
-                          <a class="carousel-control-next" data-target="#carouselTestimonials" role="button" data-slide="next">
-                                <i class="fas fa-chevron-right fa-2x" aria-hidden="true"></i>
-                          </a>
+                              </ol>
+                              <?php endif; ?>
                     </div>
                 <?php endif; wp_reset_query(); ?>
         </div>

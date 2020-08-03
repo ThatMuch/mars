@@ -2,15 +2,16 @@ blockquote {
     font-style: italic;
     position: relative;
     quotes: "“" "”" "‘" "’";
-    padding: 2rem;
+    padding: 1.5rem;
 
     &::before,
     &::after {
         position: absolute;
-        color: $color-grey;
+        color: $color-grey1;
         font-size: 6em;
         font-weight: 400;
         line-height: 0.1em;
+        z-index: 100;
     }
 
     &::before {

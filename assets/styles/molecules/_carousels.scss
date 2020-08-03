@@ -8,10 +8,20 @@
 .carousel {
     .carousel-inner {
         width: 100%;
+        overflow: visible;
 
         @include breakpoint(tablet) {
             margin: 0 auto;
-            width: 500px;
+        }
+    }
+
+    .carousel-indicators {
+        li {
+            background-color: $color-grey1;
+
+            &.active {
+                background-color: $color-primary;
+            }
         }
     }
 }

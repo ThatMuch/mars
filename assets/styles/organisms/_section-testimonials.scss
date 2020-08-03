@@ -5,7 +5,7 @@
 
 
     &__carousel {
-        text-align: center;
+        text-align: justify;
 
         @include breakpoint(mobile) {
             min-height: 500px;
@@ -13,15 +13,36 @@
 
 
         &_item {
+            height: 100%;
+
+            blockquote {
+                padding: 0;
+                animation-delay: .5s;
+
+                &:before {
+                    left: -30px;
+                }
+
+                &:after {
+                    right: -30px;
+                    bottom: -20px;
+                }
+            }
+
+            &-author {
+                animation-delay: 1s;
+            }
+
             &-image {
-                @extend .mb-3, .rounded-circle;
+                @extend .mb-3;
 
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
-                height: 150px;
-                width: 150px;
-                background-color: #ccc;
+                height: 200px;
+                width: 200px;
+                background-color: $color-grey;
+                border-radius: $border-radius;
             }
         }
 
