@@ -51,6 +51,10 @@ main#sections {
     }
 }
 
+.toto {
+    background-color: $color-primary;
+}
+
 @import "section-text";
 @import "section-text-image";
 @import "section-testimonials";

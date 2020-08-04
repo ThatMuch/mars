@@ -20,7 +20,7 @@
         <!-- Title -->
         <!-- Texte -->
         <?php if(get_sub_field('text') ) : ?>
-            <div><?php echo  get_sub_field('text'); ?></div>
+            <?php echo  get_sub_field('text'); ?>
         <?php endif; ?>
         <!-- Texte -->
     </div>

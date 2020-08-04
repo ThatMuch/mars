@@ -12,7 +12,7 @@
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
-                "class": "",
+                "class": "sections",
                 "id": ""
             },
             "layouts": {
@@ -273,9 +273,9 @@
                             },
                             "default_value": "",
                             "tabs": "all",
-                            "toolbar": "basic",
-                            "media_upload": 1,
-                            "delay": 0
+                            "toolbar": "full",
+                            "media_upload": 0,
+                            "delay": 1
                         }
                     ],
                     "min": "",
@@ -323,7 +323,7 @@
                             "tabs": "all",
                             "toolbar": "full",
                             "media_upload": 1,
-                            "delay": 0
+                            "delay": 1
                         },
                         {
                             "key": "field_5b9bb2e2734bd",
@@ -397,7 +397,7 @@
                             "key": "field_5b9bb37d734c1",
                             "label": "Texte",
                             "name": "text",
-                            "type": "textarea",
+                            "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -407,10 +407,10 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "",
-                            "maxlength": "",
-                            "rows": "",
-                            "new_lines": ""
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 1,
+                            "delay": 1
                         },
                         {
                             "key": "field_5b9bb3d9734c3",
@@ -834,6 +834,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5ba68b9426093",
+                            "label": "Titre",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5e8dd678044cc",
                             "label": "Texte",
                             "name": "texte",
@@ -878,25 +897,6 @@
                             "mime_types": "",
                             "return_format": "array",
                             "preview_size": "medium"
-                        },
-                        {
-                            "key": "field_5ba68b9426093",
-                            "label": "Titre",
-                            "name": "title",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -1018,6 +1018,33 @@
                             "allow_null": 0,
                             "multiple": 0,
                             "disable": ""
+                        },
+                        {
+                            "key": "field_5e8df3262a907",
+                            "label": "Gallerie",
+                            "name": "gallerie",
+                            "type": "gallery",
+                            "instructions": "Maximum 9 images",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "min": "",
+                            "max": 9,
+                            "insert": "append",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "return_format": "array",
+                            "preview_size": "medium"
                         }
                     ],
                     "min": "",
@@ -1127,7 +1154,7 @@
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -1136,12 +1163,10 @@
         "excerpt",
         "discussion",
         "comments",
-        "revisions",
         "slug",
-        "author",
-        "categories"
+        "author"
     ],
     "active": 1,
     "description": "",
-    "modified": 1595943536
+    "modified": 1596528795
 }

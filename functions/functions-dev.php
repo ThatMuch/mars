@@ -228,4 +228,5 @@ function sectionID($text){
     $result = strtolower($a);
     return $result;
 }
+
 ?>

@@ -122,6 +122,16 @@ function mars_theme_support()  {
 }
 add_action( 'after_setup_theme', 'mars_theme_support');
 
+/* 1.3 CSS TO ADMIN
+/––––––––––––––––––––––––––––––––––––*/
+function admin_css() {
+	$admin_handle = 'admin_css';
+	$admin_stylesheet = get_template_directory_uri() . '/admin_style.min.css';
+
+	wp_enqueue_style($admin_handle, $admin_stylesheet);
+}
+add_action('admin_print_styles', 'admin_css', 11);
+
 
 /*==================================================================================
   2.0 GENERAL SETTINGS
