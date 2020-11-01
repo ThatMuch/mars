@@ -35,3 +35,23 @@ titles.forEach(function (title) {
         title.innerHTML = newTitle;
     }
 })
+
+var img_wrapper = document.querySelectorAll(".card-blog_wrapper")
+
+
+
+function ratio_img(img_wrapper) {
+    img_wrapper.forEach(function (wrapper) {
+        var wrapper_width = wrapper.offsetWidth;
+        console.log(wrapper_width);
+        wrapper.style.height = wrapper_width.toString() + "px";
+        wrapper.style.background = "red";
+
+    })
+}
+
+ratio_img(img_wrapper);
+
+$(window).bind('resize',function () {
+    ratio_img(img_wrapper);
+}).trigger('resize');

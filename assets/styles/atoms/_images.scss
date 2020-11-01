@@ -20,7 +20,7 @@ img[data-src][src] {
 }
 
 img {
-    border-radius: 3px !important;
+    border-radius: 3px;
     transition-duration: $transition_slow;
 
     &.shadow {

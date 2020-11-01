@@ -34,21 +34,22 @@ function stanlee_sections() {
   ob_start('sanitize_output');
   if (have_rows('sections')):
     while (have_rows('sections')): the_row();
-      if (get_row_layout() == 'text') : stanlee_section_text(); endif;
-      if (get_row_layout() == 'text_image') : stanlee_section_text_img(); endif;
-      if (get_row_layout() == 'link') : stanlee_section_link(); endif;
-      if (get_row_layout() == 'services') : stanlee_section_services(); endif;
-      if (get_row_layout() == 'team') : stanlee_section_team(); endif;
-      if (get_row_layout() == 'portfolio') : stanlee_section_portfolio(); endif;
-      if (get_row_layout() == 'testimonials') : stanlee_section_testimonials(); endif;
-      if (get_row_layout() == 'price') : stanlee_section_price(); endif;
-      if (get_row_layout() == 'logos') : stanlee_section_logos(); endif;
+      if (get_row_layout() == 'articles') : stanlee_section_articles(); endif;
       if (get_row_layout() == 'carousel') : stanlee_section_carousel(); endif;
-      if (get_row_layout() == 'gallery') : stanlee_section_gallery(); endif;
       if (get_row_layout() == 'contact') : stanlee_section_contact(); endif;
-      if (get_row_layout() == 'stats') : stanlee_section_stats(); endif;
       if (get_row_layout() == 'faq') : stanlee_section_faq(); endif;
+      if (get_row_layout() == 'gallery') : stanlee_section_gallery(); endif;
       if (get_row_layout() == 'header') : stanlee_section_header(); endif;
+      if (get_row_layout() == 'link') : stanlee_section_link(); endif;
+      if (get_row_layout() == 'logos') : stanlee_section_logos(); endif;
+      if (get_row_layout() == 'portfolio') : stanlee_section_portfolio(); endif;
+      if (get_row_layout() == 'price') : stanlee_section_price(); endif;
+      if (get_row_layout() == 'services') : stanlee_section_services(); endif;
+      if (get_row_layout() == 'stats') : stanlee_section_stats(); endif;
+      if (get_row_layout() == 'team') : stanlee_section_team(); endif;
+      if (get_row_layout() == 'testimonials') : stanlee_section_testimonials(); endif;
+      if (get_row_layout() == 'text_image') : stanlee_section_text_img(); endif;
+      if (get_row_layout() == 'text') : stanlee_section_text(); endif;
     endwhile;
   endif;
   return ob_get_flush();
@@ -175,6 +176,13 @@ function stanlee_section_faq() {
 function stanlee_section_header() {
   ob_start('sanitize_output');
     include (get_template_directory().'/templates/section-header.php');
+  return ob_get_flush();
+}
+/* Articles
+/––––––––––––––––––––––––*/
+function stanlee_section_articles() {
+  ob_start('sanitize_output');
+    include (get_template_directory().'/templates/section-articles.php');
   return ob_get_flush();
 }
 
