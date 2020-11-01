@@ -21,7 +21,7 @@
 	<!--=== OPEN-GRAPH TAGS ===-->
 	<?php mars_ogtags() ?>
 	<!--=== PRELOAD FONTS ===-->
-	<?php mars_preload_fonts() ?>
+	<?php // mars_preload_fonts() ?>
 	<!--=== WP HEAD ===-->
 	<?php wp_head(); ?>
 </head>

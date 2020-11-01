@@ -15,6 +15,7 @@
 
             &-expand {
                 color: rgba($color: $color-primary, $alpha: 0.5);
+                transition-duration: $transition_slow;
             }
 
             &:hover {

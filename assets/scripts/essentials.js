@@ -49,4 +49,11 @@ function debounce(func, wait, immediate) {
     if (callNow) func.apply(context, args);
   };
 }
-/* toto */
+/* Collapse accordeon */
+jQuery('.accordion .card-header').click(function() {
+  jQuery(this).toggleClass('active').find('i').toggleClass('fa-plus fa-minus')
+         .closest('section').siblings('section')
+         .removeClass('active').find('i')
+         .removeClass('fa-minus').addClass('fa-plus');
+
+});

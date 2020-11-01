@@ -13,7 +13,7 @@
       <?php $custom_logo_id = get_theme_mod( 'custom_logo' );
         $image = wp_get_attachment_image_src( $custom_logo_id , 'medium' ); ?>
 <?php $fond = get_sub_field('fond'); ?>
-  <section class="section section-header <?php echo $fond == "Couleur" ? "bg-primary": $fond == "Gris" ? "bg-light" : "" ?>">
+  <section class="section section-header <?php echo $fond == "Couleur" ? "bg-primary": "bg-light" ?>">
     <!-- Section background: image -->
     <?php if(get_sub_field('fond') == "Image"):?>
         <div class="section-background-image"  style="<?php if(get_sub_field('image')):?>background-image:url(<?php echo the_sub_field('image') ?>);
@@ -33,18 +33,11 @@
         <?php endif; ?>
         <!-- Lead -->
         <!-- Button -->
-        <?php if (have_rows('button')) : ?>
-            <?php while ( have_rows('button') ) : the_row(); ?>
-                <?php if (get_sub_field('link') == 'Externe' && get_sub_field('label') && get_sub_field('url') ) : ?>
-                    <a href="<?php the_sub_field('url'); ?>" class="btn btn-outline-light animate__animated animate__fadeIn"><?php the_sub_field('label'); ?></a>
-                <?php endif; ?>
-                <?php if (get_sub_field('link') == 'Interne' && get_sub_field('label') && get_sub_field('int_url') ) : ?>
-                    <a href="<?php the_sub_field('int_url'); ?>" class="btn btn-outline-light animate__animated animate__fadeIn">
-                        <?php the_sub_field('label'); ?>
+        <?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
+                    <a class="btn btn-outline-light animate__animated animate__fadeIn" href="<?php echo  $link['url']; ?>">
+                        <?php echo  $link['title']; ?>
                     </a>
                 <?php endif; ?>
-            <?php endwhile; ?>
-        <?php endif; ?>
-        <!-- Button -->
+                <!-- Button -->
       </div>
  </section>

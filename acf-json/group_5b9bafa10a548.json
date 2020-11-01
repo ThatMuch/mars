@@ -4,15 +4,15 @@
     "fields": [
         {
             "key": "field_5b9bafde734b5",
-            "label": "Sections",
+            "label": "",
             "name": "sections",
             "type": "flexible_content",
-            "instructions": "",
+            "instructions": "Vous pouvez ajouter, supprimer et déplacer vos sections sur votre page.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
-                "class": "sections",
+                "class": "toto",
                 "id": ""
             },
             "layouts": {
@@ -23,6 +23,38 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5ba612cd36490",
+                            "label": "Image",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "Ajoutez une image de fond.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5b9bb37d564c4",
+                                        "operator": "==",
+                                        "value": "Image"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
                             "key": "field_5b9bb37d734b1",
                             "label": "Titre",
                             "name": "title",
@@ -31,7 +63,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "section-title",
                                 "id": ""
                             },
@@ -46,11 +78,11 @@
                             "label": "Slogan",
                             "name": "lead",
                             "type": "text",
-                            "instructions": "",
+                            "instructions": "Ajoutez un slogan ou un sous titre.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -61,117 +93,6 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5b9bb3d9734c4",
-                            "label": "Bouton",
-                            "name": "button",
-                            "type": "group",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "layout": "table",
-                            "sub_fields": [
-                                {
-                                    "key": "field_5b9bb3f2734c5",
-                                    "label": "Label",
-                                    "name": "label",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
-                                },
-                                {
-                                    "key": "field_5b9bb404734c6",
-                                    "label": "Lien",
-                                    "name": "link",
-                                    "type": "radio",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "choices": {
-                                        "Interne": "Interne",
-                                        "Externe": "Externe"
-                                    },
-                                    "allow_null": 1,
-                                    "other_choice": 0,
-                                    "default_value": "Externe",
-                                    "layout": "vertical",
-                                    "return_format": "value",
-                                    "save_other_choice": 0
-                                },
-                                {
-                                    "key": "field_5b9bb4a4734c7",
-                                    "label": "",
-                                    "name": "url",
-                                    "type": "url",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_5b9bb404734c6",
-                                                "operator": "==",
-                                                "value": "Externe"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": ""
-                                },
-                                {
-                                    "key": "field_5b9bb4c7734c8",
-                                    "label": "",
-                                    "name": "int_url",
-                                    "type": "page_link",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_5b9bb404734c6",
-                                                "operator": "==",
-                                                "value": "Interne"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "post_type": "",
-                                    "taxonomy": "",
-                                    "allow_null": 0,
-                                    "allow_archives": 1,
-                                    "multiple": 0
-                                }
-                            ]
-                        },
-                        {
                             "key": "field_5b9bb37d564c4",
                             "label": "Fond",
                             "name": "fond",
@@ -180,14 +101,12 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
                             "choices": {
-                                "Blanc": "Blanc",
-                                "Gris": "Gris",
-                                "Couleur": "Jaune",
+                                "Couleur": "Couleur",
                                 "Image": "Image"
                             },
                             "allow_null": 0,
@@ -198,36 +117,19 @@
                             "save_other_choice": 0
                         },
                         {
-                            "key": "field_5ba612cd36490",
-                            "label": "Image",
-                            "name": "image",
-                            "type": "image",
+                            "key": "field_5b9bb3d9734c4",
+                            "label": "Bouton",
+                            "name": "button",
+                            "type": "link",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_5b9bb37d564c4",
-                                        "operator": "==",
-                                        "value": "Image"
-                                    }
-                                ]
-                            ],
+                            "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url",
-                            "preview_size": "thumbnail",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
+                            "return_format": "array"
                         }
                     ],
                     "min": "",
@@ -248,7 +150,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "30",
                                 "class": "title",
                                 "id": ""
                             },
@@ -267,7 +169,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "70",
                                 "class": "",
                                 "id": ""
                             },
@@ -1168,5 +1070,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1596528795
+    "modified": 1596534223
 }

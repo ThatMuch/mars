@@ -9,12 +9,11 @@
     // scroll listener
     window.addEventListener( 'scroll', showImagesOnView, false );
   }
-console.log(images);
+
   // Show the image if reached on viewport
   function showImagesOnView( e ) {
     for ( var i of images ) {
       if( i.getAttribute('src') ) { continue; } // SKIP if already displayed
-	  console.log("toto");
       // Compare the position of image and scroll
       var bounding = i.getBoundingClientRect();
       var isOnView = bounding.top >= 0 &&
