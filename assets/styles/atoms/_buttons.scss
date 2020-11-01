@@ -7,14 +7,14 @@
  */
 
 button, .btn {
-    padding: 13px 38px !important;
-    border-radius: 3px !important;
-    text-transform: uppercase !important;
-    font-family: "Arial" !important;
-    font-weight: 700 !important;
-    font-size: 13px !important;
-    letter-spacing: 1px !important;
-    line-height: normal !important;
+    padding: 13px 38px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-family: "Arial";
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: normal;
 
     &:hover, &:active, &:focus {
         //

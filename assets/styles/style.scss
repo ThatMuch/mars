@@ -21,6 +21,14 @@
 @import "base";
 
 /*==================================================================================
+  BOOTSTRAP
+==================================================================================*/
+
+$theme-colors: ("primary": $color-primary, "secondary": $color-secondary);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+/*==================================================================================
   ATOMIC DESIGN/
 ==================================================================================*/
 
@@ -64,10 +72,3 @@
 @import "./templates/_page";
 @import "./templates/_post";
 @import "./templates/_subsite";
-
-/*==================================================================================
-  BOOTSTRAP
-==================================================================================*/
-$theme-colors: ("primary": $color-primary, "secondary": $color-secondary);
-
-@import "../../node_modules/bootstrap/scss/bootstrap";
