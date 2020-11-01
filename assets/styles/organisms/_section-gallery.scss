@@ -9,7 +9,7 @@
     a {
         display: block;
         overflow: hidden;
-        border-radius: 3px;
+        border-radius: $border-radius;
 
         &:hover {
             img {

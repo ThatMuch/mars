@@ -20,7 +20,7 @@ img[data-src][src] {
 }
 
 img {
-    border-radius: 3px;
+    border-radius: $border-radius;
     transition-duration: $transition_slow;
 
     &.shadow {
@@ -33,7 +33,7 @@ img {
     display: flex;
     justify-content: center;
     margin: 0 auto 50px;
-    border-radius: 3px;
+    border-radius: $border-radius;
 
     .img-box {
         box-shadow: $shadow;
@@ -43,7 +43,7 @@ img {
         overflow: hidden;
         position: relative;
         overflow: hidden;
-        border-radius: 3px;
+        border-radius: $border-radius;
 
         img {
             width: 100%;
@@ -59,7 +59,7 @@ img {
 
     .bordered {
         border: 1px solid $color-grey2;
-        border-radius: 3px;
+        border-radius: $border-radius;
         position: absolute;
         z-index: -1;
         top: 24px;
