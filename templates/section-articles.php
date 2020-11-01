@@ -19,7 +19,31 @@
 			<h2 class="section__title primary"><?php echo  get_sub_field('title'); ?></h2>
 		<?php endif; ?>
 		<!-- Title -->
-
+		<div class="row card-blog-featured">
+			<?php $args = array(
+					'post_type' => 'post',
+					'posts_per_page' => 1
+				);
+                	$query = new WP_Query( $args );
+                    if ( $query->have_posts() ) {
+                        while ( $query->have_posts() ) {
+							$query->the_post();?>
+							<div class="col-md-6">
+								<div class="card-blog-featured_wrapper">
+									<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+									<img data-src="<?php echo $image[0]; ?>" class="card-blog-featured_img" alt="<?php the_title(); ?>"/>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="p-3">
+									<h3 ><a href="<?php the_permalink() ?>" target="_blank" rel="noopener noreferrer"><?php the_title(); ?></a></h3>
+									<div class="card-blog-featured_excerpt">
+										<?php  the_excerpt(); ?>
+										</div>
+								</div>
+							</div>
+							<?php }} wp_reset_postdata(); ?>
+		</div>
         <div class="row">
             <?php $args = array(
 					'post_type' => 'post',
@@ -35,9 +59,11 @@
 								<div class="card-blog">
 									<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 									<div class="card-blog_wrapper">
-										<img src="<?php echo $image[0]; ?>" class="card-blog_img" alt="<?php the_title(); ?>"/>
+										<img data-src="<?php echo $image[0]; ?>" class="card-blog_img" alt="<?php the_title(); ?>"/>
 									</div>
-									<h3 class="card-blog_title"><a href="<?php the_permalink() ?>" target="_blank" rel="noopener noreferrer"><?php the_title(); ?></a></h3>
+									<div class="card-blog_title">
+										<h3 ><a href="<?php the_permalink() ?>" target="_blank" rel="noopener noreferrer"><?php the_title(); ?></a></h3>
+									</div>
 									<div class="card-blog_excerpt">
 									<?php  the_excerpt(); ?>
 									</div>
@@ -55,7 +81,9 @@
 				$link_url = $link['url'];
 				$link_title = $link['title'];
 		?>
-			<a class="btn btn-primary mt-auto" href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html( $link_title ); ?></a>
+		<div class="text-center">
+			<a class="btn btn-primary ml-auto mr-auto" href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html( $link_title ); ?></a>
+		</div>
 		<?php endif; ?>
 	</div>
  </section>

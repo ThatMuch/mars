@@ -15,7 +15,8 @@ button, .btn {
     font-size: 17px;
     letter-spacing: 1px;
     line-height: normal;
-    height: 48px;
+    min-height: 48px;
+    transition-duration: $transition_slow;
 
     &:hover, &:active, &:focus {
         //

@@ -109,7 +109,8 @@ gulp.task('browsersync', function() {
     snippetOptions: {
       whitelist: ['/wp-admin/admin-ajax.php'],
       blacklist: ['/wp-admin/**']
-    }
+    },
+    reloadDelay: 800
   });
 });
 

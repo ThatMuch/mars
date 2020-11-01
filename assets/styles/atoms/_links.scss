@@ -13,6 +13,7 @@ a {
 
     &:hover {
         color: $a__hovercolor;
+        text-decoration: none;
     }
 
     &.no-style {

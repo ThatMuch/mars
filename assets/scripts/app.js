@@ -37,21 +37,26 @@ titles.forEach(function (title) {
 })
 
 var img_wrapper = document.querySelectorAll(".card-blog_wrapper")
-
+var img_featured = document.querySelectorAll(".card-blog-featured_wrapper")
 
 
 function ratio_img(img_wrapper) {
     img_wrapper.forEach(function (wrapper) {
         var wrapper_width = wrapper.offsetWidth;
-        console.log(wrapper_width);
         wrapper.style.height = wrapper_width.toString() + "px";
-        wrapper.style.background = "red";
-
+    })
+}
+function ratio_img_featured(img_featured) {
+    img_featured.forEach(function (wrapper) {
+        var wrapper_height = wrapper.offsetWidth * 0.6;
+        wrapper.style.height = wrapper_height.toString() + "px";
     })
 }
 
 ratio_img(img_wrapper);
+ratio_img_featured(img_featured);
 
 $(window).bind('resize',function () {
     ratio_img(img_wrapper);
+    ratio_img_featured(img_featured);
 }).trigger('resize');
