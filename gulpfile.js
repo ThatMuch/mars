@@ -110,7 +110,7 @@ gulp.task('browsersync', function() {
       whitelist: ['/wp-admin/admin-ajax.php'],
       blacklist: ['/wp-admin/**']
     },
-    reloadDelay: 800
+   // reloadDelay: 800
   });
 });
 
@@ -163,6 +163,7 @@ gulp.task('cachebust', gulp.series('clean:cachebust', 'css', function() {
     .pipe(gulp.dest('./'))
     .pipe(rev.manifest({merge: true}))
     .pipe(gulp.dest('./'))
+    .pipe(browserSync.reload({ stream: true }));
 }));
 
 
@@ -217,7 +218,6 @@ gulp.task('watch',  gulp.parallel('browsersync', function() {
   watch(assets['javascript'], gulp.series('javascript'));
   watch('**/*.php', browserSync.reload);
   watch('*.html', browserSync.reload);
-  watch('**/*.scss', browserSync.reload);
 }));
 
 gulp.task('build-clean', function() {

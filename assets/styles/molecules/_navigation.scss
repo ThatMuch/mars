@@ -42,7 +42,7 @@ nav.navbar {
         text-transform: uppercase;
         font-weight: 700;
         font-size: 13px;
-        color: #fff;
+        color: #fff !important;
 
         &:hover {
             opacity: .7;
@@ -99,7 +99,7 @@ nav.navbar {
         }
 
         &-icon {
-            filter: invert(100%);
+           filter: invert(100%);
         }
     }
 }
