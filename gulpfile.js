@@ -22,7 +22,7 @@
 /* SETTINGS
   /=  ================================================== =  = */
 // local domain used by browsersync
-var browsersync_proxy = "http://localhost:10023";
+var browsersync_proxy = "http://mars.local";
 
 // default asset paths
 var assets = {

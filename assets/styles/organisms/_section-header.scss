@@ -1,7 +1,5 @@
 .section-header {
     background-color: #fff;
-
-    //text-align: center;
     position: relative;
     height: $size-header;
     display: flex;
@@ -16,29 +14,12 @@
         background-size: cover;
     }
 
-    .container {
-        //display: flex;
-        //align-items: center;
-        // justify-content: center;
-        // flex-direction: column;
-   
-    }
-
-    .section__title {
-        margin-bottom: 1rem !important;
-    }
-
     .section__lead {
         animation-delay: .2s;
+        color: #fff;
+        font-size: 42px;
+        line-height:45px;
+        letter-spacing: 1px;
+        margin-bottom: 50px;
     }
-
-  /*   .vidbg-container {
-        filter: saturate(0);
-    }
-
-    .vidbg-overlay {
-        background: $color-black !important;
-        filter: opacity(0.7); // Change here for more opacity
-
-    } */
 }

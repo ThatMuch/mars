@@ -15,6 +15,7 @@ nav.navbar {
     z-index: 200;
     width: 100vw;
     height: $size-navbar;
+    background-color: $color-primary;
 
     .logo  {
         width: 12rem;
@@ -25,23 +26,23 @@ nav.navbar {
 
     .navbar-collapse.show {
         background-color: $color-primary;
-        width: 100vw;
         width: 100%;
         position: absolute;
         left: 0;
-        top: 90px;
+        top: 70px;
         padding: 15px;
 
         a {
-            color: #fff;
+            color: #fff !important;
         }
     }
 
     .nav-link {
         font-family: $text-heading;
         text-transform: uppercase;
+        font-weight: 700;
         font-size: 13px;
-        color: $color-black !important;
+        color: #fff;
 
         &:hover {
             opacity: .7;
@@ -56,11 +57,11 @@ nav.navbar {
                     width: calc(100% - 25px);
                     position: absolute;
                     left: 50%;
-                    bottom: 1px;
+                    bottom: 2px;
                     transform: translate(-50%, 0);
                     border-width: 0 0 1px;
                     border-style: solid;
-                    border-color: $color-primary-darker;
+                    border-color: #fff;
                 }
             }
         }
@@ -75,11 +76,11 @@ nav.navbar {
             }
 
             i {
-                color: $black !important;
+                color: $white !important;
             }
 
             &:hover i {
-                color: $color-dark !important;
+                opacity: .5;
             }
         }
     }
@@ -87,6 +88,18 @@ nav.navbar {
     @media (max-width: 992px) {
         .header__rs {
             display: none;
+        }
+    }
+
+    .navbar-toggler {
+        border: none;
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        &-icon {
+            filter: invert(100%);
         }
     }
 }

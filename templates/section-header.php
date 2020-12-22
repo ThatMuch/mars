@@ -21,12 +21,6 @@
     <?php endif;?>
     <!-- Section background: image -->
     <div class="container">
-           <!-- Title -->
-        <?php if(get_sub_field('title') ) : ?>
-            <h1 class="section__title animate__animated animate__slideInDown"><?php echo  get_sub_field('title'); ?></h1>
-        <?php endif; ?>
-        <!-- Title -->
-
         <!-- Lead -->
         <?php if(get_sub_field('lead') ) : ?>
             <p class="section__lead animate__animated animate__slideInDown"> <?php echo  get_sub_field('lead'); ?></p>
@@ -34,7 +28,7 @@
         <!-- Lead -->
         <!-- Button -->
         <?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
-                    <a class="btn btn-outline-light animate__animated animate__fadeIn" href="<?php echo  $link['url']; ?>">
+                    <a class="btn btn-light animate__animated animate__fadeIn" href="<?php echo  $link['url']; ?>">
                         <?php echo  $link['title']; ?>
                     </a>
                 <?php endif; ?>
