@@ -57,3 +57,29 @@ jQuery('.accordion .card-header').click(function() {
          .removeClass('fa-minus').addClass('fa-plus');
 
 });
+
+
+/* Images */
+
+
+let imgCircle = document.getElementsByClassName('img-circle');
+console.log(imgCircle);
+Array.from(imgCircle).forEach(img => {
+  let wrapper = document.createElement('div');
+  wrapper.classList.add('img-box', 'img-shadow')
+
+  img.parentNode.insertBefore(wrapper, img);
+  wrapper.appendChild(img);
+});
+
+
+/* Section Text-Image */
+
+let sections = document.getElementsByClassName('section-text-image');
+let arraySection = Array.from(sections);
+
+for (let index = 0; index < arraySection.length; index++) {
+  if (index % 2 !== 0) {
+    arraySection[index].getElementsByClassName('row')[0].classList.add('flex-row-reverse');
+      }
+  }

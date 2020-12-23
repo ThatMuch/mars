@@ -21,8 +21,26 @@ main#sections {
             position: relative;
         }
 
-        .section__title {
+        &__title {
             margin-bottom: 2rem;
+            text-align: left;
+
+            &.decorated {
+                position: relative;
+                padding-left: 24px;
+
+                &::before {
+                    content: "";
+                    height: 56px;
+                    width: 4px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    background: $color-primary;
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-20px, -50%);
+                }
+            }
         }
 
         .section__background-image {

@@ -25,7 +25,7 @@ inputs.forEach(function(input) {
 })
 
 // 2 line title
-var titles = document.querySelectorAll("h2");
+/* var titles = document.querySelectorAll("h2");
 titles.forEach(function (title) {
     var titleLength = title.textContent.split(' ').length;
 
@@ -34,7 +34,7 @@ titles.forEach(function (title) {
 
         title.innerHTML = newTitle;
     }
-})
+}) */
 
 var img_wrapper = document.querySelectorAll(".card-blog_wrapper")
 var img_featured = document.querySelectorAll(".card-blog-featured_wrapper")
