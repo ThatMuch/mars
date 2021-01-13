@@ -16,26 +16,11 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     @include heading-size(6);
-
-    //text-align: center;
     color: $color-light;
-
-    span {
-        &.primary {
-            color: $color-primary;
-        }
-
-        &.light {
-            font-weight: 100;
-        }
-    }
 }
 
 h2 {
     @include heading-size(5);
-    @include breakpoint(mobile) {
-        font-size: 1rem !important;
-    }
 }
 
 h3 {

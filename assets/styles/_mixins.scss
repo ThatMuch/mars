@@ -52,6 +52,10 @@ $amplifier-heading: 1.5;
 /* The mixin */
 @mixin heading-size($size) {
     font-size: $size * $step-size-heading * $amplifier-heading + rem;
+
+    @include breakpoint(mobile) {
+        font-size: ($size - 1) * $step-size-heading * $amplifier-heading + rem;
+    }
 }
 
 @mixin ellipsis($width: 100%) {
@@ -78,7 +82,7 @@ $amplifier-heading: 1.5;
         bottom: 0;
     }
 
-/*     &:after {
+    &:after {
         content: '';
         position: absolute;
         right: 0;
@@ -86,5 +90,5 @@ $amplifier-heading: 1.5;
         height: 1em;
         margin-top: 0.2em;
         background: $bgColor;
-    } */
+    }
 }

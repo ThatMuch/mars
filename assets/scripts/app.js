@@ -68,9 +68,7 @@ const titles = Array.from(document.getElementsByClassName("card-blog_title mobil
 
 titles.forEach(title => {
     var text = title.getElementsByTagName("a")[0].innerText;
-    console.log(text.length);
     if (text.length > 40) {
-        console.log(text.length);
        title.getElementsByTagName("a")[0].innerText = text.substring(0, 40) + "...";
     }
 });
