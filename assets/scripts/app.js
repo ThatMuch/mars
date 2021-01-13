@@ -60,3 +60,18 @@ $(window).bind('resize',function () {
     ratio_img(img_wrapper);
     ratio_img_featured(img_featured);
 }).trigger('resize');
+
+
+/* Ellipsis title card blog */
+
+const titles = Array.from(document.getElementsByClassName("card-blog_title mobile"));
+
+titles.forEach(title => {
+    var text = title.getElementsByTagName("a")[0].innerText;
+    console.log(text.length);
+    if (text.length > 40) {
+        console.log(text.length);
+       title.getElementsByTagName("a")[0].innerText = text.substring(0, 40) + "...";
+    }
+});
+

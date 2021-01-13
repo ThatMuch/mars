@@ -78,7 +78,7 @@ $amplifier-heading: 1.5;
         bottom: 0;
     }
 
-    &:after {
+/*     &:after {
         content: '';
         position: absolute;
         right: 0;
@@ -86,5 +86,5 @@ $amplifier-heading: 1.5;
         height: 1em;
         margin-top: 0.2em;
         background: $bgColor;
-    }
+    } */
 }

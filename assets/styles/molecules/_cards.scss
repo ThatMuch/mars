@@ -73,10 +73,24 @@
         margin-right: auto;
         height: 100px;
 
+        &.mobile {
+            height: 93px;
+            letter-spacing: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2; /* number of lines to show */
+        }
+
         h3 {
             font-size: 20px;
             line-height: 35px;
             text-transform: inherit;
+
+            @include breakpoint(mobile) {
+                font-size: 18px;
+            }
         }
     }
 

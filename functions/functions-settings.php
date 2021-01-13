@@ -289,13 +289,14 @@ function wp_trim_all_excerpt($text)
     }
     $text = strip_shortcodes($text);
     $text = strip_tags($text);
+    $text = preg_replace( "/\r|\n/", "", $text );
     $excerpt_length = apply_filters('excerpt_length', 30);
     $excerpt_more = apply_filters('excerpt_more', ' ... ' . '<a class="read-more" href="' . get_permalink($post->ID) . '">' . 'Plus' . '</a>');
     $words = explode(' ', $text, $excerpt_length + 1);
     if (count($words)> $excerpt_length) {
         array_pop($words);
         $text = implode(' ', $words);
-        $text = $text . $excerpt_more;
+        $text = $text /* . $excerpt_more */;
     } else {
         $text = implode(' ', $words);
     }
