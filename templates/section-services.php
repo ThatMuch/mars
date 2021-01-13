@@ -21,34 +21,31 @@
             <!-- Title -->
             <div class="row mt-5">
                   <!-- Service -->
-                  <?php if (have_rows('service')) : ?>
+                  <?php
+                  if (have_rows('service')) :  $i = 0; ?>
                         <?php while (have_rows('service')) : the_row(); ?>
-                              <div class="col-lg-4 col-md-12 section-services__item">
-                                                <!-- Image -->
-                                                <?php if (get_sub_field('image')) : $img = get_sub_field('image'); ?>
-                                                      <div class="block__image--bordered">
-                                                            <div class="img-box">
-                                                                  <img class="section-service__image shadow" data-src="<?php echo  $img['sizes']['medium'] ?>" alt="<?php echo  $img['alt']; ?>">
-                                                            </div>
-                                                            <div class="bordered left-bottom"></div>
-                                                      </div>
-                                                <?php endif; ?>
-                                                <!-- Image -->
-
+                              <div class="<?php echo $i == 0 ? "col-lg-6" : "col-lg-3" ?>  col-md-12 section-services__item">
+                                    <!-- Image -->
+                                    <?php if (get_sub_field('image')) : $img = get_sub_field('image'); ?>
+                                          <img class="section-services__item__image img-fluid img-radius" data-src="<?php echo  $img['sizes']['medium'] ?>" alt="<?php echo  $img['alt']; ?>">
+                                    <?php endif; ?>
+                                    <!-- Image -->
                                                 <!-- Icon title -->
                                                 <?php if (get_sub_field('title')) : ?>
-                                                      <h3 class="section-services__item__title">
-                                                            <?php echo  get_sub_field('title'); ?>
-                                                      </h3>
+                                                      <div class="section-services__item__title-wrapper">
+                                                            <h3 class="section-services__item__title">
+                                                                  <?php echo  get_sub_field('title'); ?>
+                                                            </h3>
+                                                      </div>
                                                 <?php endif; ?>
                                                 <!-- Icon title -->
                                                 <!-- Texte -->
-                                                <?php if (get_sub_field('text')) : ?>
-                                                      <p class="section-services__item__text"> <?php echo  get_sub_field('text'); ?></p>
-                                                <?php endif; ?>
+                                            <!--     <?php //if (get_sub_field('text')) : ?>
+                                                      <p class="section-services__item__text"> <?php // echo  get_sub_field('text'); ?></p>
+                                                <?php // endif; ?> -->
                                                 <!-- Texte -->
                               </div>
-                        <?php endwhile; ?>
+                        <?php $i++; endwhile; ?>
                   <?php endif; ?>
                   <!-- Service -->
             </div>
