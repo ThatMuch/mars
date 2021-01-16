@@ -12,7 +12,7 @@
  */
 ?>
 <?php $fond = get_sub_field('fond'); ?>
-<section class="section section-services <?php echo  $fond == "Couleur" ? "bg-primary": $fond == "Gris" ? "bg-light" : "" ?>">
+<section class="section section-services <?php echo  $fond == "Primary" ? "bg-primary": $fond == "Gris" ? "bg-light" : "" ?>">
       <div class="container">
             <!-- Title -->
             <?php if (get_sub_field('title')) : ?>
@@ -34,7 +34,9 @@
                                                 <?php if (get_sub_field('title')) : ?>
                                                       <div class="section-services__item__title-wrapper">
                                                             <h3 class="section-services__item__title">
-                                                                  <?php echo  get_sub_field('title'); ?>
+                                                                  <a href="<?php if ( get_sub_field('link') ) : $link = get_sub_field('link'); echo  $link['url']; endif; ?> ">
+                                                                        <?php echo  get_sub_field('title'); ?>
+                                                                  </a>
                                                             </h3>
                                                       </div>
                                                 <?php endif; ?>

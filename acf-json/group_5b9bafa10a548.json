@@ -750,7 +750,7 @@
                             "choices": {
                                 "Blanc": "Blanc",
                                 "Gris": "Gris",
-                                "Couleur": "Jaune"
+                                "Couleur": "Primary"
                             },
                             "allow_null": 0,
                             "other_choice": 0,
@@ -844,8 +844,8 @@
                                     "key": "field_5e8cfcb1d7ada",
                                     "label": "Lien",
                                     "name": "link",
-                                    "type": "url",
-                                    "instructions": "http:\/\/generationubuntufrance.fr\/nos-activites#recherche",
+                                    "type": "link",
+                                    "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -853,8 +853,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "placeholder": ""
+                            "return_format": "array"
                                 }
                             ]
                         }
