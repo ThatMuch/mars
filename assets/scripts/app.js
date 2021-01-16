@@ -64,12 +64,13 @@ $(window).bind('resize',function () {
 
 /* Ellipsis title card blog */
 
-const titles = Array.from(document.getElementsByClassName("card-blog_title mobile"));
+const titles = Array.from(document.getElementsByClassName("card-blog_title"));
 
 titles.forEach(title => {
     var text = title.getElementsByTagName("a")[0].innerText;
-    if (text.length > 40) {
-       title.getElementsByTagName("a")[0].innerText = text.substring(0, 40) + "...";
+    if (text.length > 25) {
+        title.getElementsByTagName("h3")[0].style.lineHeight = 33 + "px";
+        title.getElementsByTagName("a")[0].innerText = text.substring(0, 25) + "...";
     }
 });
 

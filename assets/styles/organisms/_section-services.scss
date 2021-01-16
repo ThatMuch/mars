@@ -24,10 +24,13 @@
 
         &__title {
             text-transform: inherit;
-            font-size: 25px;
+            font-size: 18px;
             color: $color-primary;
             text-align: center;
             margin-bottom: 0;
+            @include breakpoint(tablet) {
+                font-size: 25px;
+            }
         }
 
         &__text {
