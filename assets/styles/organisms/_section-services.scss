@@ -20,6 +20,12 @@
             border-radius: 19px;
             padding: 20px;
             max-width: 80%;
+            transition: box-shadow .5s ease;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: -10px 10px 0px $color-secondary;
+            }
         }
 
         &__title {
@@ -28,6 +34,7 @@
             color: $color-primary;
             text-align: center;
             margin-bottom: 0;
+
             @include breakpoint(tablet) {
                 font-size: 25px;
             }
