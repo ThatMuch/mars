@@ -28,12 +28,14 @@
                     if ( $query->have_posts() ) {
                         while ( $query->have_posts() ) {
 							$query->the_post();?>
+								<?php if(get_post_thumbnail_id( $post->ID )) : ?>
 							<div class="col-md-6">
 								<div class="card-blog-featured_wrapper">
 									<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 									<img data-src="<?php echo $image[0]; ?>" class="card-blog-featured_img" alt="<?php the_title(); ?>"/>
 								</div>
 							</div>
+							<?php endif; ?>
 							<div class="col-md-6">
 								<div class="p-3">
 									<h3 ><a href="<?php the_permalink() ?>" target="_blank" rel="noopener noreferrer"><?php the_title(); ?></a></h3>
@@ -58,9 +60,11 @@
                             <div class="col-md-4">
 								<div class="card-blog">
 									<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+									<?php if(get_post_thumbnail_id( $post->ID )) : ?>
 									<div class="card-blog_wrapper">
 										<img data-src="<?php echo $image[0]; ?>" class="card-blog_img" alt="<?php the_title(); ?>"/>
 									</div>
+									<?php endif; ?>
 									<div class="card-blog_title d-none d-md-block">
 										<h3 ><a href="<?php the_permalink() ?>" target="_blank" rel="noopener noreferrer"><?php the_title(); ?></a></h3>
 									</div>
