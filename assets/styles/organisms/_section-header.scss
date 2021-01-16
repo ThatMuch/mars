@@ -2,8 +2,13 @@
     background-color: #fff;
     position: relative;
     height: $size-header;
-    display: flex;
-    align-items: center;
+    overflow: hidden;
+
+    @include breakpoint(tablet) {
+        display: flex;
+        align-items: center;
+    }
+
 
     .section-background-image {
         height: 100%;
@@ -14,12 +19,27 @@
         background-size: cover;
     }
 
+    &__content {
+        width: 100%;
+
+        @include breakpoint(tablet) {
+            width: 75%;
+        }
+    }
+
     .section__lead {
         animation-delay: .2s;
         color: #fff;
-        font-size: 42px;
-        line-height:45px;
+        line-height: 60px;
         letter-spacing: 1px;
-        margin-bottom: 50px;
+        margin-bottom: 25px;
+        font-weight: 400;
+        font-family: $text-ff;
+        text-transform: initial;
+
+        @include breakpoint(mobile) {
+            font-size: 22px;
+            line-height: 30px;
+        }
     }
 }
