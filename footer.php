@@ -73,7 +73,7 @@
 	<div class="footer__credits">
 		<div class="container">
 			<div class="footer__inner">
-				© Copyright 2019, Tous droits réservés Génération Ubuntu France
+				©Copyright <?php echo date("Y"); ?>, Tous droits réservés <?php echo get_bloginfo( 'name' )?> ?
 			</div>
 			<a class="footer__credits__thatmuch" href="https://thatmuch.fr" target="_blank" rel="noopener noreferrer">
 				<img data-src="<?php echo  get_template_directory_uri() ?>/assets/images/thatmuch-logo.webp" alt="logo that much">
