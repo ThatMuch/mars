@@ -10,28 +10,77 @@
 ?>
 
 <?php get_header(); ?>
+<main id="blog">
 <div class="container">
-  <div class="row">
-  <main id="blog" class="content-area col-sm-12 col-lg-8">
+<section>
+  <div class="row card-blog-featured">
+        <?php $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 1
+          );
+                    $query = new WP_Query( $args );
+                      if ( $query->have_posts() ) {
+                          while ( $query->have_posts() ) {
+                $query->the_post();?>
+                  <?php if(get_post_thumbnail_id( $post->ID )) : ?>
+                <div class="col-sm-6">
+                  <div class="card-blog-featured_wrapper">
+                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+                    <img data-src="<?php echo $image[0]; ?>" class="card-blog-featured_img" alt="<?php the_title(); ?>"/>
+                  </div>
+                </div>
+                <?php endif; ?>
+                <div class="col-sm-6">
+                  <div class="p-3">
+                    <h3 ><a href="<?php the_permalink() ?>" target="_blank" rel="noopener noreferrer"><?php the_title(); ?></a></h3>
+                    <div class="card-blog-featured_excerpt">
+                      <?php  excerpt(55); ?>
+                      </div>
+                  </div>
+                </div>
+                <?php }} wp_reset_postdata(); ?>
+      </div>
+          <div class="row mb-5">
+              <?php $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 3
+          );
+                    $query = new WP_Query( $args );
 
-    <section>
-      <?php if (have_posts() ) : while (have_posts()) : the_post(); ?>
-        <article>
-          <div class="row">
-            <?php if (has_post_thumbnail($post->ID)): ?>
-              <div class="col-sm-4">
-                <?php the_post_thumbnail('large', ['class' => 'modernizr-of']); ?>
-              </div>
-            <?php endif; ?>
-            <div class="<?php if (has_post_thumbnail($post->ID)): ?> col-sm-8 <?php else : ?> col-sm-12<?endif; ?>">
-              <h2 class="entry-title"><a href="<?php the_permalink()?>"><?php the_title(); ?></a></h2>
-              <?php the_excerpt(); ?>
-              <hr>
-              <div class="postinfo"><?php echo  get_the_date_stanlee(); ?></div>
-            </div>
+                      if ( $query->have_posts() ) {
+                          while ( $query->have_posts() ) {
+                            $query->the_post();?>
+
+                              <div class="col-sm-4">
+                  <div class="card-blog">
+                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+                    <?php if(get_post_thumbnail_id( $post->ID )) : ?>
+                    <div class="card-blog_wrapper">
+                      <img data-src="<?php echo $image[0]; ?>" class="card-blog_img" alt="<?php the_title(); ?>"/>
+                    </div>
+                    <?php endif; ?>
+                    <div class="card-blog_title d-none d-md-block">
+                      <h3 ><a href="<?php the_permalink() ?>" target="_blank" rel="noopener noreferrer"><?php the_title(); ?></a></h3>
+                    </div>
+                    <div class="card-blog_title mobile d-block d-md-none">
+                      <h3><a href="<?php the_permalink() ?>" target="_blank" rel="noopener noreferrer"><?php the_title(); ?></a></h3>
+                    </div>
+                    <div class="card-blog_excerpt">
+                    <?php echo excerpt(15); ?>
+                    </div>
+                  </div>
+                              </div>
+                                <?php
+                          }
+                      }
+          wp_reset_postdata();
+        ?>
           </div>
-        </article>
-      <?php endwhile; endif; ?>
+
+</section>
+
+<section></section>
+<section class="catgories"></section>
 <?php the_posts_pagination( array(
 	'mid_size'  => 2,
 	'prev_text' => __( '<', 'stanlee' ),
@@ -39,11 +88,6 @@
   'screen_reader_text' => __( '&nbsp;' )
 ) ); ?>
 
-    </section>
-
-  </main>
-
-<?php get_sidebar(); ?>
-  </div>
 </div>
+</main>
 <?php get_footer(); ?>
