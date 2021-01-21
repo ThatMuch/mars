@@ -43,6 +43,7 @@
 
 .card-blog {
     position: relative;
+    margin-bottom: 30px;
 
     &_img {
         object-fit: cover;
@@ -74,6 +75,7 @@
         height: 100px;
         transition: box-shadow .5s ease;
         cursor: pointer;
+
         &:hover {
             box-shadow: -10px 10px 0px $color-secondary;
         }
