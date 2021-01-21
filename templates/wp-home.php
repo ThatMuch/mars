@@ -11,7 +11,6 @@
 
 <?php get_header(); ?>
 <main id="blog" class="blog">
-
 <section class="container blog__featured">
   <div class="row card-blog-featured">
         <?php $args = array(
