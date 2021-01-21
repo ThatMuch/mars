@@ -315,4 +315,47 @@ function excerpt($num) {
     $excerpt = implode(" ",$excerpt)."...";
     echo $excerpt;
 }
+
+/* 2.12 LOAD MORE
+/––––––––––––––––––––––––––––––––––––––*/
+add_action('wp_ajax_load_more', 'load_more_posts');
+add_action('wp_ajax_nopriv_load_more', 'load_more_posts');
+
+function load_more_posts() {
+
+    if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'load_more_nonce')) {
+        exit;
+    }
+
+    $args = json_decode( stripslashes( $_POST['query'] ), true );
+    $args['paged'] = $_POST['page'] + 1;
+    $args['post_status'] = 'publish';
+    $post_type = $args['post_type'];
+
+    query_posts( $args );
+
+    if (have_posts()):
+        while (have_posts()) : the_post();
+                get_template_part('templates/wp', 'post');
+        endwhile;
+
+    endif;
+
+    die;
+}
+
+global $wp_query;
+wp_enqueue_script('load-more', get_template_directory_uri() . '/inc/assets/js/myloadmore.js', array(), '1.0.0', true);
+
+    $published_posts = wp_count_posts()->publish;
+    $posts_per_page = get_option('posts_per_page');
+    $page_number_max = ceil($published_posts / $posts_per_page);
+
+wp_localize_script( 'load-more', 'load_more', array(
+    'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
+    'posts' => json_encode( $wp_query->query_vars ),
+    'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+    'max_page' =>  $page_number_max,
+    'nonce' => wp_create_nonce('load_more_nonce')
+) );
 ?>

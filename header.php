@@ -96,13 +96,15 @@
 			<?php endif; ?>
 		</div>
 	</nav>
-	<?php if (is_home()) : ?>
-		<header>
+	<?php if (!is_front_page()) :
+		$background_image = get_the_post_thumbnail_url(get_option('page_for_posts'));
+		?>
+		<header class="page-header"style="background-image: url(<?php echo $background_image;?>)">
 			<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 		</header>
 	<?php endif; ?>
 	<?php if (is_archive() || is_category()) : ?>
-		<header>
+		<header class="page-header">
 			<h1 class="page-title screen-reader-text">
 				<?php
 				if (is_day()) :

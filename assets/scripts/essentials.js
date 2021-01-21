@@ -63,7 +63,6 @@ jQuery('.accordion .card-header').click(function() {
 
 
 let imgCircle = document.getElementsByClassName('img-circle');
-console.log(imgCircle);
 Array.from(imgCircle).forEach(img => {
   let wrapper = document.createElement('div');
   wrapper.classList.add('img-box', 'img-shadow')
