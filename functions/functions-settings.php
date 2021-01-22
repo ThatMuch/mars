@@ -343,19 +343,19 @@ function load_more_posts() {
 
     die;
 }
-
 global $wp_query;
 wp_enqueue_script('load-more', get_template_directory_uri() . '/inc/assets/js/myloadmore.js', array(), '1.0.0', true);
 
-    $published_posts = wp_count_posts()->publish;
+    $published_posts = $wp_query->found_posts;
     $posts_per_page = get_option('posts_per_page');
     $page_number_max = ceil($published_posts / $posts_per_page);
-
+// TODO : get max by query
 wp_localize_script( 'load-more', 'load_more', array(
     'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
     'posts' => json_encode( $wp_query->query_vars ),
     'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
     'max_page' =>  $page_number_max,
-    'nonce' => wp_create_nonce('load_more_nonce')
+    'nonce' => wp_create_nonce('load_more_nonce'),
+    'objects' => get_queried_object(),
 ) );
 ?>

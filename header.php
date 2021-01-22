@@ -96,28 +96,30 @@
 			<?php endif; ?>
 		</div>
 	</nav>
-	<?php if (!is_front_page()) :
+	<?php if (is_page() && !is_front_page() || is_home() ) :
 		$background_image = get_the_post_thumbnail_url(get_option('page_for_posts'));
 		?>
-		<header class="page-header"style="background-image: url(<?php echo $background_image;?>)">
+		<header class="page-header" style="background-image: url(<?php echo $background_image;?>)">
 			<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 		</header>
-	<?php endif; ?>
-	<?php if (is_archive() || is_category()) : ?>
-		<header class="page-header">
-			<h1 class="page-title screen-reader-text">
-				<?php
-				if (is_day()) :
-					echo get_the_date();
-				elseif (is_month()) :
-					echo get_the_date(_x('F Y', 'monthly archives date format', 'stanlee'));
-				elseif (is_year()) :
-					echo get_the_date(_x('Y', 'yearly archives date format', 'stanlee'));
-				else :
-					single_cat_title();
-				endif;
-				?>
-			</h1>
-		</header>
+		<?php elseif (is_archive() || is_category()) :
+			$category = get_queried_object();
+			$image = get_field('image', $category);
+			?>
+			<header class="page-header" style="background-image: url(<?= $image['url'];?>)">
+				<h1 class="page-title screen-reader-text">
+					<?php
+					if (is_day()) :
+						echo get_the_date();
+					elseif (is_month()) :
+						echo get_the_date(_x('F Y', 'monthly archives date format', 'stanlee'));
+					elseif (is_year()) :
+						echo get_the_date(_x('Y', 'yearly archives date format', 'stanlee'));
+					else :
+						single_cat_title();
+					endif;
+					?>
+				</h1>
+			</header>
 	<?php endif; ?>
 	<div id="content" class="site-content">
