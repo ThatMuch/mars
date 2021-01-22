@@ -19,60 +19,32 @@ img[data-src][src] {
     opacity: 1;
 }
 
-img {
+.img-radius {
     border-radius: $border-radius;
     transition-duration: $transition_slow;
-
-    &.shadow {
-        box-shadow: $shadow;
-    }
 }
 
-.block__image--bordered {
+.img-shadow {
+    box-shadow: -10px 10px 0 0 rgba($color-primary-darker, 0.5);
+}
+
+.img-box {
+    background: $color-light;
+    width: 300px;
+    height: 300px;
     position: relative;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto 50px;
-    border-radius: $border-radius;
+    overflow: hidden;
+    border-radius: 300px;
+    margin: 0 auto;
 
-    .img-box {
-        box-shadow: $shadow;
-        background: $color-light;
+    img {
         width: 100%;
         height: 100%;
-        overflow: hidden;
-        position: relative;
-        overflow: hidden;
-        border-radius: $border-radius;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition-duration: $transition_slow;
-
-            &:hover {
-                transform: scale(1.2);
-            }
-        }
-    }
-
-    .bordered {
-        border: 1px solid $color-grey2;
-        border-radius: $border-radius;
-        position: absolute;
-        z-index: -1;
-        top: 24px;
-        left: -24px;
-        width: 100%;
-        height: 100%;
+        object-fit: cover;
         transition-duration: $transition_slow;
-    }
 
-    &:hover {
-        .bordered {
-            top: 35px;
-            left: -35px;
+        &:hover {
+            transform: scale(1.2);
         }
     }
 }

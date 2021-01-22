@@ -1,66 +1,33 @@
 <?
+
 /**
- * The template displaying the posts-overview
+ * The template displaying the archive
  *
  * @author      ThatMuch
  * @version     0.1.0
  * @since       mars_1.0.0
  */
-
 ?>
 
 <?php get_header(); ?>
-<main id="blog" class="blog">
+<main id="archives" class="blog">
 <section class="container blog__featured">
-  <div class="row card-blog-featured">
-        <?php $args = array(
-            'post_type' => 'post',
-            'posts_per_page' => 1
-          );
-                    $query = new WP_Query( $args );
-                      if ( $query->have_posts() ) {
-                          while ( $query->have_posts() ) {
-                $query->the_post();?>
-                  <?php if(get_post_thumbnail_id( $post->ID )) : ?>
-                <div class="col-sm-6">
-                  <div class="card-blog-featured_wrapper">
-                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-                    <img data-src="<?php echo $image[0]; ?>" class="card-blog-featured_img" alt="<?php the_title(); ?>"/>
-                  </div>
-                </div>
-                <?php endif; ?>
-                <div class="col-sm-6">
-                  <div class="p-3">
-                    <h3 ><a href="<?php the_permalink() ?>" target="_blank" rel="noopener noreferrer"><?php the_title(); ?></a></h3>
-                    <div class="card-blog-featured_excerpt">
-                      <?php  excerpt(55); ?>
-                      </div>
-                  </div>
-                </div>
-                <?php }} wp_reset_postdata(); ?>
-      </div>
           <div class="row mb-5 load-more-target">
               <?php
-              $args = array(
-                'post_type' => 'post',
-
-              );
-              $query = new WP_Query( $args );
-              if ( $query->have_posts() ) {
-                  while ( $query->have_posts() ) {
-                    $query->the_post();
+              if ( have_posts() ) {
+                  while ( have_posts() ) {
+                    the_post();
                         get_template_part('templates/wp', 'post');
                   }
                 }
               ?>
           </div>
-                <?php global $wp_query;
+                <?php
       if (  $wp_query->max_num_pages > 1 ) : ?>
         <div class="d-flex justify-content-center w-100">
     <button id="load-more" class="btn btn-primary mb-3 ">Afficher plus</button>
   </div>
       <?php endif; ?>
-
 </section>
 <section class="blog__categories">
   <div class="container h-100">
@@ -94,7 +61,5 @@
     </div>
   </div>
 </section>
-
-
 </main>
 <?php get_footer(); ?>

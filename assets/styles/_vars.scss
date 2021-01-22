@@ -16,7 +16,7 @@
 
 $base_size: 1.5vw; // scales all `rem` based elements by adding this value as html font-size
 
-$header_height: 90px; // define the height of the header
+$header_height: 70px; // define the height of the header
 $element_width: 90vw; // default width of the inner elements --> nav, article, div.element, footer
 $element_maxwidth: 1200px; // max-width of the inner elements (should be <= $scaling_endpoint)
 
@@ -76,7 +76,7 @@ $text-xxxl: calc(1em * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-sca
 =            Sizes                           =
 =============================================*/
 
-$size-header: 500px;
+$size-header: 550px;
 $size-navbar: 70px;
 
 /*=====  End of Sizes                 ======*/

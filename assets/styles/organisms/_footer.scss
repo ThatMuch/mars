@@ -9,8 +9,8 @@
 .footer {
     width: 100vw;
     margin-top: auto;
-    color: $color-grey;
-    background: $color-secondary;
+    color: #fff;
+    background: $color-primary;
 
     &__rs {
         text-align: center;
@@ -25,7 +25,7 @@
             }
 
             a {
-                color: $color-grey1;
+                color: #fff;
                 font-size: 1.5rem;
             }
 
@@ -91,7 +91,7 @@
     /*----------  Widgets  ----------*/
 
     .widget-title {
-        color: $color-grey1;
+        color: #fff;
         margin-bottom: 1rem;
     }
 
@@ -99,8 +99,10 @@
         padding: 0;
 
         .nav-link {
-            color: $color-light;
+            color: #fff;
             padding: 0 0 0.75rem 0;
+
+
         }
     }
 
@@ -114,10 +116,9 @@
 
     .widget.widget_nav_menu {
         li a {
-            text-decoration: underline !important;
-
+            text-decoration: underline;
             &:hover {
-                color: $color-primary !important;
+                text-decoration: none;
             }
         }
     }

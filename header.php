@@ -32,11 +32,13 @@
 	<?php $custom_logo_id = get_theme_mod('custom_logo');
 	$image = wp_get_attachment_image_src($custom_logo_id, 'full'); ?>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="container">
 			<a class="navbar-brand" href="<?php echo  site_url(); ?>">
-				<div class="logo" style="background-image: url('<?php if ($image[0]) : echo $image[0];
-																else : echo get_template_directory_uri() ?>/assets/images/MarsLogoBlack.webp<?php endif; ?>')"></div>
+				<div
+				class="logo"
+				style="background-image: url('<?php echo $image[0] ? $image[0] : get_template_directory_uri()?>/assets/images/MarsLogoBlack.webp')">
+				</div>
 			</a>
 			<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e('Toggle Navigation', 'theme-textdomain'); ?>">
 				<span class="navbar-toggler-icon"></span>
@@ -64,7 +66,7 @@
 						<?php if (get_sub_field('facebook')) : ?>
 							<li class="footer__rs__item">
 								<a href="<?php the_sub_field('facebook'); ?>" target="_blank">
-									<i class="fab fa-facebook" aria-hidden="true"></i>
+									<i class="fab fa-facebook-f" aria-hidden="true"></i>
 								</a>
 							</li>
 						<?php endif; ?>
@@ -78,7 +80,7 @@
 						<?php if (get_sub_field('linkedin')) : ?>
 							<li class="footer__rs__item">
 								<a href="<?php the_sub_field('linkedin'); ?>" target="_blank">
-									<i class="fab fa-linkedin" aria-hidden="true"></i>
+									<i class="fab fa-linkedin-in" aria-hidden="true"></i>
 								</a>
 							</li>
 						<?php endif; ?>
@@ -94,26 +96,30 @@
 			<?php endif; ?>
 		</div>
 	</nav>
-	<?php if (is_home()) : ?>
-		<header>
+	<?php if (is_page() && !is_front_page() || is_home() ) :
+		$background_image = get_the_post_thumbnail_url(get_option('page_for_posts'));
+		?>
+		<header class="page-header" style="background-image: url(<?php echo $background_image;?>)">
 			<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 		</header>
-	<?php endif; ?>
-	<?php if (is_archive() || is_category()) : ?>
-		<header>
-			<h1 class="page-title screen-reader-text">
-				<?php
-				if (is_day()) :
-					echo get_the_date();
-				elseif (is_month()) :
-					echo get_the_date(_x('F Y', 'monthly archives date format', 'stanlee'));
-				elseif (is_year()) :
-					echo get_the_date(_x('Y', 'yearly archives date format', 'stanlee'));
-				else :
-					single_cat_title();
-				endif;
-				?>
-			</h1>
-		</header>
+		<?php elseif (is_archive() || is_category()) :
+			$category = get_queried_object();
+			$image = get_field('image', $category);
+			?>
+			<header class="page-header" style="background-image: url(<?= $image['url'];?>)">
+				<h1 class="page-title screen-reader-text">
+					<?php
+					if (is_day()) :
+						echo get_the_date();
+					elseif (is_month()) :
+						echo get_the_date(_x('F Y', 'monthly archives date format', 'stanlee'));
+					elseif (is_year()) :
+						echo get_the_date(_x('Y', 'yearly archives date format', 'stanlee'));
+					else :
+						single_cat_title();
+					endif;
+					?>
+				</h1>
+			</header>
 	<?php endif; ?>
 	<div id="content" class="site-content">

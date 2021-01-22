@@ -279,8 +279,10 @@ load_theme_textdomain('_s', get_template_directory() . '/languages');
 
 /* 2.11 MANAGE EXCERPT LENGTH
 /––––––––––––––––––––––––––––––––––––––*/
-function wp_trim_all_excerpt($text)
+
+ function wp_trim_all_excerpt($text)
 {
+
     global $post;
     if ('' == $text ) {
         $text = get_the_content('');
@@ -289,18 +291,71 @@ function wp_trim_all_excerpt($text)
     }
     $text = strip_shortcodes($text);
     $text = strip_tags($text);
+    $text = preg_replace( "/\r|\n/", "", $text );
     $excerpt_length = apply_filters('excerpt_length', 30);
     $excerpt_more = apply_filters('excerpt_more', ' ... ' . '<a class="read-more" href="' . get_permalink($post->ID) . '">' . 'Plus' . '</a>');
     $words = explode(' ', $text, $excerpt_length + 1);
     if (count($words)> $excerpt_length) {
         array_pop($words);
         $text = implode(' ', $words);
-        $text = $text . $excerpt_more;
+        $text = $text . '...' /* . $excerpt_more */ ;
     } else {
         $text = implode(' ', $words);
     }
     return $text;
 }
+
+
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'wp_trim_all_excerpt');
+function excerpt($num) {
+    $limit = $num+1;
+    $excerpt = explode(' ', get_the_excerpt(), $limit);
+    array_pop($excerpt);
+    $excerpt = implode(" ",$excerpt)."...";
+    echo $excerpt;
+}
+
+/* 2.12 LOAD MORE
+/––––––––––––––––––––––––––––––––––––––*/
+add_action('wp_ajax_load_more', 'load_more_posts');
+add_action('wp_ajax_nopriv_load_more', 'load_more_posts');
+
+function load_more_posts() {
+
+    if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'load_more_nonce')) {
+        exit;
+    }
+
+    $args = json_decode( stripslashes( $_POST['query'] ), true );
+    $args['paged'] = $_POST['page'] + 1;
+    $args['post_status'] = 'publish';
+    $post_type = $args['post_type'];
+
+    query_posts( $args );
+
+    if (have_posts()):
+        while (have_posts()) : the_post();
+                get_template_part('templates/wp', 'post');
+        endwhile;
+
+    endif;
+
+    die;
+}
+global $wp_query;
+wp_enqueue_script('load-more', get_template_directory_uri() . '/inc/assets/js/myloadmore.js', array(), '1.0.0', true);
+
+    $published_posts = $wp_query->found_posts;
+    $posts_per_page = get_option('posts_per_page');
+    $page_number_max = ceil($published_posts / $posts_per_page);
+// TODO : get max by query
+wp_localize_script( 'load-more', 'load_more', array(
+    'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
+    'posts' => json_encode( $wp_query->query_vars ),
+    'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+    'max_page' =>  $page_number_max,
+    'nonce' => wp_create_nonce('load_more_nonce'),
+    'objects' => get_queried_object(),
+) );
 ?>

@@ -25,7 +25,7 @@ inputs.forEach(function(input) {
 })
 
 // 2 line title
-var titles = document.querySelectorAll("h2");
+/* var titles = document.querySelectorAll("h2");
 titles.forEach(function (title) {
     var titleLength = title.textContent.split(' ').length;
 
@@ -34,7 +34,7 @@ titles.forEach(function (title) {
 
         title.innerHTML = newTitle;
     }
-})
+}) */
 
 var img_wrapper = document.querySelectorAll(".card-blog_wrapper")
 var img_featured = document.querySelectorAll(".card-blog-featured_wrapper")
@@ -60,3 +60,21 @@ $(window).bind('resize',function () {
     ratio_img(img_wrapper);
     ratio_img_featured(img_featured);
 }).trigger('resize');
+
+
+/* Ellipsis title card blog */
+
+const titles = Array.from(document.getElementsByClassName("card-blog_title"));
+
+function ellipsisTitle(titles) {
+    titles.forEach(title => {
+        var text = title.getElementsByTagName("a")[0].innerText;
+        if (text.length > 25) {
+            title.getElementsByTagName("h3")[0].style.lineHeight = 33 + "px";
+            title.getElementsByTagName("a")[0].innerText = text.substring(0, 25) + "...";
+        }
+    });
+}
+
+ellipsisTitle(titles);
+
