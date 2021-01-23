@@ -150,7 +150,7 @@ function sanitize_output($buffer) {
 /––––––––––––––––––––––––*/
 
 // return formatted post-date in german
-function get_the_date_stanlee() {
+function get_the_date_mars() {
   $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
         $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
@@ -166,9 +166,13 @@ function get_the_date_stanlee() {
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
-	$byline = sprintf(
+/* 	$byline = sprintf(
 		esc_html_x( '%s', 'post author', 'stanlee-starter' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+	); */
+	$byline = sprintf(
+		esc_html_x( '%s', 'post author', 'stanlee-starter' ),
+		'<span class="author vcard">' . esc_html( get_the_author() ) . '</span>'
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span> | <span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
