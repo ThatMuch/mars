@@ -10,9 +10,7 @@
 
 <?php get_header(); ?>
 <div class="container">
-  <div class="row">
-  <main id="post" class="content-area col-sm-12 col-lg-8">
-
+  <main id="post" class="content-area">
 <section>
   <?php if (have_posts() ) : while (have_posts()) : the_post(); ?>
     <article>
@@ -27,8 +25,7 @@
 </section>
 
 </main>
-<?php get_sidebar();?>
-  </div>
+<?php // get_sidebar();?>
 </div>
 
 <?php get_footer(); ?>
