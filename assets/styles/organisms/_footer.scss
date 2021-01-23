@@ -12,9 +12,13 @@
     color: #fff;
     background: $color-primary;
 
+    a {
+        color: #fff;
+    }
+
     &__rs {
         text-align: center;
-
+        margin-bottom: 0;
         &__item {
             display: inline-block;
             list-style: none;
@@ -25,7 +29,7 @@
             }
 
             a {
-                color: #fff;
+
                 font-size: 1.5rem;
             }
 
@@ -68,13 +72,14 @@
 
     &__logo img {
         width: 70px;
+        margin-bottom: 15px;
     }
 
     &__follow-us {
-        margin-top: 15px !important;
+margin-bottom: 5px;
         font-family: $text-heading;
-        font-size: 15px !important;
-        font-weight: 700 !important;
+        font-size: 15px;
+        font-weight: 700;
     }
 
     &__infos {

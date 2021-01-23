@@ -11,7 +11,7 @@
 	<div class="container">
 		<div class="row footer__inner">
 			<?php if (have_rows('rs', 'options')) : ?>
-				<div class="col-md-3 col-sm-12 text-center">
+				<div class="col-md-3 col-sm-12 text-center d-flex flex-column justify-content-center">
 					<div class="footer__logo">
 						<img data-src="<?php echo  get_template_directory_uri() ?>/assets/images/MarsLogoWhite.webp" alt="logo footer">
 					</div>
@@ -58,13 +58,13 @@
 			<div class="col-md-3 col-sm-12 footer__infos">
 						<p><?php echo  get_bloginfo('name'); ?></p>
 					<?php if (get_field('adress', 'option')) : ?>
-							<p><?php echo  get_field('adress', 'option'); ?></p>
+							<p class="mb-2"><?php echo  get_field('adress', 'option'); ?></p>
 					<?php endif; ?>
 					<?php if (get_field('contact_mail', 'option')) : ?>
-							<p><?php echo  get_field('contact_mail', 'option'); ?></p>
+							<a href="mailto:<?= get_field('contact_mail', 'option');?>"><?php echo  get_field('contact_mail', 'option'); ?></a>
 					<?php endif; ?>
 					<?php if (get_field('phone', 'option')) : ?>
-							<p><?php echo  get_field('phone', 'option'); ?></p>
+							<a href="tel:<?= get_field('phone', 'option'); ?>"><?php echo  get_field('phone', 'option'); ?></a>
 					<?php endif; ?>
 				</ul>
 			</div>
