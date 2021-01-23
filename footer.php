@@ -12,12 +12,19 @@
 	<div class="footer__upper" style="background-image: url(<?= $images ?>)">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-7">
+			<div class="col-sm-5 footer__upper__img ">
+				<?php if ( get_field('img', 'option') ) : $image = get_field('img', 'option'); ?>
+					<!-- Thumbnail image -->
+					<img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" class="img-circle img-shadow"/>
+
+				<?php endif; ?>
+			</div>
+			<div class="col-sm-7 footer__upper__content">
 				<?php if (get_field('title', 'option')) : ?>
 				<h4 class="text-white"><?php echo  get_field('title', 'option'); ?></h4>
 				<?php endif; ?>
 				<?php if (get_field('text', 'option')) : ?>
-				<p><?php echo  get_field('text', 'option'); ?></p>
+				<p class="mb-4"><?php echo  get_field('text', 'option'); ?></p>
 				<?php endif; ?>
 				<?php
 				$link = get_field('cta', 'option');
@@ -29,14 +36,7 @@
 					<a class="btn btn-light" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 				<?php endif; ?>
 			</div>
-			<div class="col-sm-5 d-flex align-items-center justify-content-end">
-				<?php if ( get_field('img', 'option') ) : $image = get_field('img', 'option'); ?>
-					<!-- Thumbnail image -->
-					<img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" class="img-circle img-shadow"/>
 
-				<?php endif; ?>
-
-			</div>
 		</div>
 	</div>
 	</div>
