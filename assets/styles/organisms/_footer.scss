@@ -42,7 +42,7 @@
 
     &__credits {
         background-color: $color-secondary-darker;
-        color: white;
+        color: rgba($color: #fff, $alpha: 0.5);
         text-align: center;
         position: relative;
         font-size: .8rem;
@@ -56,11 +56,13 @@
 
             img {
                 width: 100%;
-            }
-        }
+                opacity: .5;
+                transition-duration: $transition_slow;
 
-        a {
-            color: white;
+                &:hover {
+                    opacity: 1;
+                }
+            }
         }
     }
 
@@ -102,8 +104,6 @@
         .nav-link {
             color: #fff;
             padding: 0 0 0.75rem 0;
-
-
         }
     }
 
@@ -118,6 +118,7 @@
     .widget.widget_nav_menu {
         li a {
             text-decoration: underline;
+
             &:hover {
                 text-decoration: none;
             }

@@ -76,7 +76,7 @@
 				©Copyright <?php echo date("Y"); ?>, Tous droits réservés <?php echo get_bloginfo( 'name' )?>
 			</div>
 			<a class="footer__credits__thatmuch" href="https://thatmuch.fr" target="_blank" rel="noopener noreferrer">
-				<img data-src="<?php echo  get_template_directory_uri() ?>/assets/images/thatmuch-logo.webp" alt="logo that much">
+				<img src="<?php echo  get_template_directory_uri() ?>/assets/images/thatmuch-logo.webp" alt="logo that much">
 			</a>
 		</div>
 	</div>
