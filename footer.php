@@ -72,7 +72,7 @@
 	</div>
 	<div class="footer__credits">
 		<div class="container">
-			<div class="footer__inner">
+			<div class="p-2">
 				©Copyright <?php echo date("Y"); ?>, Tous droits réservés <?php echo get_bloginfo( 'name' )?>
 			</div>
 			<a class="footer__credits__thatmuch" href="https://thatmuch.fr" target="_blank" rel="noopener noreferrer">
