@@ -75,6 +75,11 @@
         height: 100px;
         transition: box-shadow .5s ease;
         cursor: pointer;
+align-items: center;
+justify-content: center;
+        h3 {
+            font-family: $text-ff;
+        }
 
         &:hover {
             box-shadow: -10px 10px 0px $color-secondary;
@@ -114,6 +119,7 @@
 
     h3 {
         text-transform: inherit;
+        font-family: $text-ff;
     }
 
     &_img {
