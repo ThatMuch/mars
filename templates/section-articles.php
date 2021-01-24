@@ -65,10 +65,10 @@
 										<img data-src="<?php echo $image[0]; ?>" class="card-blog_img" alt="<?php the_title(); ?>"/>
 									</div>
 									<?php endif; ?>
-									<div class="card-blog_title d-none d-md-block">
+									<div class="card-blog_title d-none d-md-flex">
 										<h3 ><a href="<?php the_permalink() ?>" target="_blank" rel="noopener noreferrer"><?php the_title(); ?></a></h3>
 									</div>
-									<div class="card-blog_title mobile d-block d-md-none">
+									<div class="card-blog_title mobile d-flex d-md-none">
 										<h3><a href="<?php the_permalink() ?>" target="_blank" rel="noopener noreferrer"><?php the_title(); ?></a></h3>
 									</div>
 									<div class="card-blog_excerpt">

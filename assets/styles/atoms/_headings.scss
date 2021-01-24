@@ -8,7 +8,6 @@
 h1, h2, h3, h4, h5, h6 {
     font-family: $text-heading;
     font-weight: 700;
-    color: $color-dark;
     position: relative;
     margin-bottom: 2rem;
     text-transform: uppercase;
@@ -16,7 +15,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     @include heading-size(6);
-    color: $color-light;
 }
 
 h2 {
@@ -29,12 +27,15 @@ h3 {
 
 h4 {
     @include heading-size(3);
+    text-transform: initial;
 }
 
 h5 {
     @include heading-size(2);
+    text-transform: initial;
 }
 
 h6 {
     @include heading-size(1);
+    text-transform: initial;
 }

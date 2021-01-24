@@ -65,9 +65,10 @@ jQuery('.accordion .card-header').click(function() {
 let imgCircle = document.getElementsByClassName('img-circle');
 Array.from(imgCircle).forEach(img => {
   let wrapper = document.createElement('div');
-  wrapper.classList.add('img-box', 'img-shadow')
+  wrapper.classList.add('img-circle', 'img-shadow')
 
   img.parentNode.insertBefore(wrapper, img);
+  img.removeAttribute("class");
   wrapper.appendChild(img);
 });
 

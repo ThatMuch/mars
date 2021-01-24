@@ -9,26 +9,26 @@
 ?>
 
 <?php get_header(); ?>
-<div class="container">
-  <div class="row">
-  <main id="post" class="content-area col-sm-12 col-lg-8">
-
+<div class="container container-post">
+  <main id="post" class="content-area">
 <section>
   <?php if (have_posts() ) : while (have_posts()) : the_post(); ?>
     <article>
-      <h1><?php the_title(); ?></h1>
-      <div class="postinfo"><?php echo  get_the_date_stanlee(); ?></div>
-      <div class="entry-meta">
-  </div><!-- .entry-meta -->
-      <?php the_post_thumbnail('large', ['class' => 'modernizr-of']); ?>
+      <h1 class="text-center mb-5"><?php the_title(); ?></h1>
+  <?php if ( $alt = get_the_post_thumbnail_caption() ) {
+    // Nothing to do here
+      } else {
+          $alt = get_the_title();
+      }?>
+      <img src=" <?= the_post_thumbnail_url('large')?>" alt="<?= $alt ?>">
+      <div class="postinfo mb-5"><?php echo  get_the_date_mars(); ?></div>
       <?php the_content(); ?>
     </article>
   <?php endwhile; endif; ?>
 </section>
 
 </main>
-<?php get_sidebar();?>
-  </div>
+<?php // get_sidebar();?>
 </div>
 
 <?php get_footer(); ?>

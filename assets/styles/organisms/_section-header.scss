@@ -3,6 +3,9 @@
     position: relative;
     height: $size-header;
     overflow: hidden;
+    .section__title {
+        color: $color-light;
+    }
 
     @include breakpoint(tablet) {
         display: flex;
