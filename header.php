@@ -96,7 +96,7 @@
 			<?php endif; ?>
 		</div>
 	</nav>
-	<?php if (is_page() && !is_front_page() ) :
+	<?php if (is_page() && !is_front_page() || is_single()) :
 		$background_image = get_the_post_thumbnail_url();
 		?>
 		<header class="page-header <?php echo $background_image ? "hasBg" : "default"?>" style="background-image: url(<?php echo $background_image ? $background_image : get_template_directory_uri()."/assets/images/bg.png";?>)">

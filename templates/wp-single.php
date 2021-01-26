@@ -14,13 +14,6 @@
 <section>
   <?php if (have_posts() ) : while (have_posts()) : the_post(); ?>
     <article>
-      <h1 class="text-center mb-5"><?php the_title(); ?></h1>
-  <?php if ( $alt = get_the_post_thumbnail_caption() ) {
-    // Nothing to do here
-      } else {
-          $alt = get_the_title();
-      }?>
-      <img src=" <?= the_post_thumbnail_url('large')?>" alt="<?= $alt ?>">
       <div class="postinfo mb-5"><?php echo  get_the_date_mars(); ?></div>
       <?php the_content(); ?>
     </article>
