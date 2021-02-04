@@ -78,3 +78,9 @@ function ellipsisTitle(titles) {
 
 ellipsisTitle(titles);
 
+    const isSplide = document.getElementsByClassName('splide');
+
+    if (isSplide.length > 0) {
+        new Splide('.splide').mount();
+    }
+
