@@ -53,13 +53,18 @@ function ratio_img_featured(img_featured) {
     })
 }
 
-ratio_img(img_wrapper);
-ratio_img_featured(img_featured);
+
 
 $(window).bind('resize',function () {
     ratio_img(img_wrapper);
     ratio_img_featured(img_featured);
 }).trigger('resize');
+
+$(document).ready(function () {
+    ratio_img(img_wrapper);
+    ratio_img_featured(img_featured);
+});
+
 
 
 /* Ellipsis title card blog */
