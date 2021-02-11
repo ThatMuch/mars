@@ -53,7 +53,7 @@
 					'menu_id'        => 'menu-main',
 					'container'      => false,
 					'depth'          => 2,
-					'menu_class'     => 'navbar-nav mr-auto',
+					'menu_class'     => 'navbar-nav m-auto',
 					'walker'         => new Bootstrap_NavWalker(), // This controls the display of the Bootstrap Navbar
 					'fallback_cb'    => 'Bootstrap_NavWalker::fallback', // For menu fallback
 				));
