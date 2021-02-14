@@ -7,7 +7,7 @@ $('#load-more').click(function () {
 			'nonce': load_more.nonce
 		};
 
-
+console.log(data);
 
 	$.ajax({
 		url: load_more.ajaxurl,
