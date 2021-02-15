@@ -96,20 +96,25 @@ ellipsisTitle(titles);
 var sectionsTI = Array.from(document.getElementsByClassName('section-text-image'));
 
 sectionsTI.forEach(section => {
+
     if (section.querySelectorAll('.section-text-image__content')[0]) {
+
         const save = section.querySelectorAll('.section-text-image__content')[0].innerHTML
         var content = section.querySelectorAll('.section-text-image__content')[0]
-        var p1 = section.querySelectorAll('p')[0]
+        var p1 = section.querySelectorAll('p')[0].innerText === "" ? section.querySelectorAll('p')[1] : section.querySelectorAll('p')[0]
         const button = section.querySelectorAll('.link')[0]
 
         content.innerHTML = ""
         content.appendChild(p1)
         content.style.height = "auto";
 
+        if (section.querySelectorAll('p').length < 1) {
+            button.style.display = "none";
+        }
+
           button.addEventListener('click', () => {
             content.innerHTML = save;
             button.style.display = "none";
-
         })
     }
 
