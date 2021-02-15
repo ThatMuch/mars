@@ -3,6 +3,7 @@
     position: relative;
     height: $size-header;
     overflow: hidden;
+
     .section__title {
         color: $color-light;
     }
@@ -35,7 +36,7 @@
         color: #fff;
         line-height: 60px;
         letter-spacing: 1px;
-        margin-bottom: 25px;
+        margin-bottom: 3rem;
         font-weight: 400;
         font-family: $text-ff;
         text-transform: initial;

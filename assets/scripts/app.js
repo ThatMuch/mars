@@ -104,10 +104,11 @@ sectionsTI.forEach(section => {
 
         content.innerHTML = ""
         content.appendChild(p1)
+        content.style.height = "auto";
 
           button.addEventListener('click', () => {
-
             content.innerHTML = save;
+            button.style.display = "none";
 
         })
     }
