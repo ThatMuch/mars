@@ -89,3 +89,25 @@ ellipsisTitle(titles);
         new Splide('.splide').mount();
     }
 
+
+    /* Read more section */
+
+
+var sectionsTI = Array.from(document.getElementsByClassName('section-text-image'));
+
+sectionsTI.forEach(section => {
+    const save = section.querySelectorAll('.section-text-image__content')[0].innerHTML
+    var content = section.querySelectorAll('.section-text-image__content')[0]
+    var p1 = section.querySelectorAll('p')[0]
+    const button = section.querySelectorAll('.link')[0]
+
+    content.innerHTML = ""
+    content.appendChild(p1)
+
+      button.addEventListener('click', () => {
+
+        content.innerHTML = save;
+
+    })
+
+})

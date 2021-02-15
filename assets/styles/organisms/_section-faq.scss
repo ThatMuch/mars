@@ -37,7 +37,7 @@
             }
 
             &-expand {
-                transition-duration: $transition_slow;
+                transition-duration: $transition_fast;
                 height: 3px;
                 width: 36px;
                 background-color: $color-primary;
@@ -48,6 +48,10 @@
             &:hover {
                 cursor: pointer;
             }
+        }
+
+        .card-header:not('.collapsed') .card-header-expand {
+            transform: rotate(45deg);
         }
     }
 }
