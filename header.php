@@ -37,7 +37,7 @@
 			<a class="navbar-brand" href="<?php echo  site_url(); ?>">
 				<div
 				class="logo"
-				style="background-image: url('<?php echo $image[0] ? $image[0] : get_template_directory_uri()?>/assets/images/MarsLogoBlack.webp')">
+				style="background-image: url("<?php echo $image[0] ? $image[0] : get_template_directory_uri().'/assets/images/MarsLogoBlack.webp")'?>">
 				</div>
 			</a>
 			<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e('Toggle Navigation', 'theme-textdomain'); ?>">
