@@ -108,14 +108,16 @@ sectionsTI.forEach(section => {
         content.appendChild(p1)
         content.style.height = "auto";
 
+
         if (section.querySelectorAll('p').length < 1) {
             button.style.display = "none";
         }
-
-          button.addEventListener('click', () => {
-            content.innerHTML = save;
-            button.style.display = "none";
-        })
+if(button){
+    button.addEventListener('click', () => {
+      content.innerHTML = save;
+      button.style.display = "none";
+  })
+}
     }
 
 })
