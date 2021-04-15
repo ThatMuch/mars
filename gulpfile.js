@@ -22,7 +22,7 @@
 /* SETTINGS
   /=  ================================================== =  = */
 // local domain used by browsersync
-var browsersync_proxy = "http://vevoconsulting.local";
+var browsersync_proxy = "localhost:10008";
 
 // default asset paths
 var assets = {
