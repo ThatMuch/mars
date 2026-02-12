@@ -47,6 +47,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 	 * @author  Thomas Griffin
 	 * @author  Gary Jones
 	 */
+	#[AllowDynamicProperties]
 	class TGM_Plugin_Activation {
 		/**
 		 * TGMPA version number.
@@ -2180,6 +2181,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 	 * @author  Thomas Griffin
 	 * @author  Gary Jones
 	 */
+	#[AllowDynamicProperties]
 	class TGMPA_List_Table extends WP_List_Table {
 		/**
 		 * TGMPA instance.
@@ -3512,6 +3514,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 				 * @author  Thomas Griffin
 				 * @author  Gary Jones
 				 */
+				#[AllowDynamicProperties]
 				class TGMPA_Bulk_Installer_Skin extends Bulk_Upgrader_Skin {
 					/**
 					 * Holds plugin info for each individual plugin installation.
